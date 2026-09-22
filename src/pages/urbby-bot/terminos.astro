@@ -1,0 +1,196 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { empresa, direccionCompleta } from '../../data/empresa';
+---
+
+<Legal
+  title="Términos y Condiciones — Anexo del canal de WhatsApp (Urbby Bot)"
+  description="Anexo a los Términos y Condiciones de Urbby que regula la atención y la compra a través del canal de WhatsApp operado por Urbby Bot."
+  heading="Anexo a los Términos y Condiciones"
+  subheading="Canal de Atención y Compra vía WhatsApp (Urbby Bot)"
+  intro="Este anexo complementa los Términos y Condiciones de Uso de Urbby (Compradores) y regula específicamente el uso del canal de WhatsApp operado a través de Urbby Bot."
+>
+  <h3>1. Objeto de este anexo</h3>
+  <p>
+    Este anexo regula el uso del canal de mensajería de WhatsApp operado por {empresa.razonSocial}
+    {' '}(“Urbby”) a través de un número oficial de WhatsApp Business vinculado a la plataforma Urbby,
+    mediante el cual la Persona Usuaria puede recibir atención de Urbby Bot y, cuando aplique,
+    completar compras de productos ofrecidos por los Comercios afiliados.
+  </p>
+  <p>
+    Este anexo forma parte integral de los Términos y Condiciones de Uso de Urbby (Compradores)
+    (“Términos Generales”) y se rige, en todo lo no previsto expresamente aquí, por dichos Términos
+    Generales y por la <a href="/privacidad">Declaración de Privacidad de Urbby</a>. En caso de
+    conflicto entre este anexo y los Términos Generales respecto del uso del canal de WhatsApp,
+    prevalece lo dispuesto en este anexo.
+  </p>
+  <p>
+    La Persona Usuaria acepta este anexo al iniciar una conversación con el número oficial de WhatsApp
+    de Urbby, al interactuar con Urbby Bot, o al confirmar una compra a través de este canal, lo que
+    ocurra primero.
+  </p>
+
+  <h3>2. Naturaleza del servicio: Urbby Bot</h3>
+  <p>
+    Urbby Bot es un asistente de atención al cliente que combina respuestas generadas por inteligencia
+    artificial con la intervención de agentes humanos de Urbby o de los Comercios afiliados, según el
+    tipo de consulta. La Persona Usuaria reconoce y acepta que:
+  </p>
+  <ul>
+    <li>Las primeras respuestas dentro de la conversación de WhatsApp pueden ser generadas de forma automática mediante inteligencia artificial, sin intervención humana directa en ese momento.</li>
+    <li>Urbby Bot puede transferir (“escalar”) la conversación a un agente humano cuando la consulta lo requiera, cuando la Persona Usuaria lo solicite expresamente, o cuando el sistema detecte que no puede resolver la solicitud de forma automatizada.</li>
+    <li>Toda actuación de Urbby Bot, ya sea automatizada o a través de un agente humano, se realiza en nombre y representación de Urbby o del Comercio correspondiente, según el tipo de gestión de que se trate.</li>
+  </ul>
+
+  <h3>3. Vinculación del canal de WhatsApp</h3>
+  <p>
+    Urbby opera un <strong>único número oficial de WhatsApp Business</strong>, verificado ante Meta,
+    para la atención a través de Urbby Bot. Urbby publicará dicho número en la plataforma
+    {' '}{empresa.dominio} y en sus canales oficiales; cualquier otro número que se presente como Urbby
+    y no coincida con el publicado no debe considerarse legítimo.
+  </p>
+  <p>
+    Para completar una compra por este canal, la Persona Usuaria debe identificarse con datos que
+    coincidan con los de su cuenta Urbby (si la tiene) o proporcionar la información necesaria para
+    crear o vincular una orden, conforme a la cláusula 4 de los Términos Generales (Registro y
+    Cuenta). El número de WhatsApp desde el que se escribe puede utilizarse como medio de
+    identificación y contacto para efectos del pedido.
+  </p>
+
+  <h3>4. Alcance funcional del canal</h3>
+  <p>
+    A través de Urbby Bot en WhatsApp, la Persona Usuaria puede, según la disponibilidad técnica del
+    momento:
+  </p>
+  <ul>
+    <li>Consultar información sobre productos, disponibilidad, precios y estado de órdenes previas.</li>
+    <li>Recibir recomendaciones de productos de los Comercios afiliados.</li>
+    <li>Armar un pedido, seleccionar dirección de entrega y método de pago, y confirmar la compra completa sin salir de la conversación de WhatsApp.</li>
+    <li>Recibir soporte postventa (seguimiento de envío, reclamos, cambios y devoluciones) conforme a las cláusulas 8, 9 y 10 de los Términos Generales.</li>
+  </ul>
+  <p>
+    Toda compra confirmada a través de Urbby Bot queda sujeta, en lo aplicable, a las cláusulas 6
+    (Compras en Urbby), 7 (Precios, Pagos y Urbby Pay), 8 (Envíos) y 9 (Cancelaciones, Devoluciones y
+    Cambios) de los Términos Generales, las cuales se aplican de igual forma sea que la compra se
+    realice en la aplicación, el sitio web o el canal de WhatsApp.
+  </p>
+
+  <h3>5. Pagos dentro de la conversación de WhatsApp</h3>
+  <p>
+    Cuando la Persona Usuaria completa el pago de un pedido dentro del canal de WhatsApp, el
+    procesamiento del pago se realiza a través de <strong>Urbby Pay</strong>, con
+    {' '}<strong>Banco Agrícola</strong> como procesador de pagos, en los mismos términos descritos en
+    la cláusula 7 de los Términos Generales.
+  </p>
+  <p>
+    Urbby no almacena ni tiene acceso a los datos completos de la tarjeta ingresados durante el pago;
+    únicamente recibe un token de pago por cada transacción. Cuando el Comercio y la zona lo permitan,
+    la Persona Usuaria puede optar por pago contra entrega (C.O.D.), en cuyo caso el cobro se realiza
+    por el personal de Xpress al momento de la entrega, conforme a la cláusula 7.
+  </p>
+
+  <div class="my-5 rounded-tile border border-brand/35 bg-brand/10 p-6">
+    <p class="mb-0 text-white">
+      El enlace o flujo de pago que se comparte dentro de la conversación de WhatsApp proviene siempre
+      de la infraestructura de Urbby Pay. <strong>Urbby Bot no solicitará a la Persona Usuaria el
+      número completo de su tarjeta, su código de seguridad (CVV) ni su clave de acceso a la
+      plataforma directamente dentro del chat.</strong>
+    </p>
+  </div>
+
+  <h3>6. Confirmación del pedido y validez del consentimiento</h3>
+  <p>
+    Conforme a la cláusula 11 de los Términos Generales (Validez de Documentos y Contratos
+    Electrónicos), la confirmación de una compra realizada dentro de la conversación de WhatsApp
+    —mediante una acción afirmativa expresa, como responder “confirmar”, pulsar un botón de
+    confirmación dentro del chat, o completar el pago— constituye un contrato electrónico válido, con
+    los mismos efectos que una compra confirmada en la aplicación o el sitio web de Urbby.
+  </p>
+  <p>
+    Antes de esa confirmación, Urbby Bot debe presentar a la Persona Usuaria un resumen claro del
+    pedido (productos, precio total, costo de envío y dirección de entrega), conforme a lo previsto en
+    la cláusula 6 de los Términos Generales. Urbby enviará, por el mismo canal o por correo
+    electrónico, el comprobante y la factura correspondientes a cada compra confirmada.
+  </p>
+
+  <h3>7. Envíos</h3>
+  <p>
+    Los pedidos confirmados a través de Urbby Bot se envían por medio de <strong>Xpress</strong>, en
+    los mismos plazos, condiciones y cobertura de seguro descritos en la cláusula 8 de los Términos
+    Generales. La Persona Usuaria es responsable de ingresar correctamente su dirección de entrega
+    dentro de la conversación; Urbby Bot puede solicitar confirmación de esa dirección antes de
+    despachar el pedido, pero no la modifica por iniciativa propia.
+  </p>
+
+  <h3>8. Datos personales tratados a través de WhatsApp</h3>
+  <p>
+    Además de los datos descritos en la cláusula 5 de los Términos Generales, al usar este canal Urbby
+    trata el número de teléfono de WhatsApp de la Persona Usuaria y el contenido de los mensajes
+    intercambiados con Urbby Bot, con la finalidad de brindar atención, procesar pedidos y dar soporte
+    postventa.
+  </p>
+  <p>
+    Este canal opera sobre la plataforma de mensajería de WhatsApp Business, provista por Meta
+    Platforms, Inc. (“Meta”), que actúa como encargado del tratamiento respecto de los mensajes
+    transmitidos a través de su infraestructura, conforme a los términos de servicio de WhatsApp
+    Business Platform. El uso de WhatsApp por la Persona Usuaria también se sujeta a las políticas
+    propias de WhatsApp/Meta, ajenas a Urbby.
+  </p>
+  <p>
+    Los derechos ARCO-POL sobre los datos personales tratados a través de este canal pueden ejercerse
+    por los mismos medios y ante el mismo delegado de protección de datos personales de Urbby
+    indicados en la <a href="/privacidad">Declaración de Privacidad</a>.
+  </p>
+
+  <h3>9. Limitaciones del asistente automatizado</h3>
+  <p>
+    La Persona Usuaria reconoce que las respuestas generadas por inteligencia artificial pueden, en
+    casos excepcionales, contener errores o imprecisiones. Ante cualquier duda sobre la información
+    proporcionada por Urbby Bot —en particular sobre precio, disponibilidad, plazos de entrega o
+    condiciones de una compra— la Persona Usuaria puede solicitar en cualquier momento ser atendida
+    por un agente humano, escribiendo dicha solicitud dentro de la conversación.
+  </p>
+  <p>
+    En caso de discrepancia entre una respuesta automática de Urbby Bot y el resumen de pedido
+    presentado antes de la confirmación (cláusula 6 de este anexo), prevalece lo indicado en el
+    resumen de confirmación. Un pedido confirmado conforme a la cláusula 6 no queda invalidado por un
+    error posterior de Urbby Bot en una conversación distinta.
+  </p>
+
+  <h3>10. Disponibilidad del canal</h3>
+  <p>
+    Urbby Bot está disponible las 24 horas del día para consultas básicas y para armar y confirmar
+    pedidos, sujeto a la disponibilidad técnica de la plataforma de WhatsApp Business y de los
+    sistemas de Urbby. La atención por agentes humanos dentro de este canal está sujeta al horario de
+    atención al cliente publicado por Urbby en la plataforma; fuera de ese horario, las solicitudes
+    que requieran intervención humana serán atendidas en el siguiente horario hábil.
+  </p>
+  <p>
+    Urbby no garantiza la disponibilidad ininterrumpida del canal de WhatsApp cuando la interrupción
+    obedezca a causas atribuibles a Meta o a la infraestructura de WhatsApp Business Platform, ajenas
+    al control de Urbby.
+  </p>
+
+  <h3>11. Vigencia y modificaciones</h3>
+  <p>
+    Este anexo entra en vigor desde su publicación en la plataforma {empresa.dominio} y aplica a toda
+    interacción con Urbby Bot a partir de esa fecha. Las modificaciones a este anexo que afecten los
+    derechos u obligaciones de la Persona Usuaria se comunicarán con la misma anticipación prevista en
+    la cláusula 2 de los Términos Generales (al menos <strong>10 días corridos</strong>), mediante
+    aviso en la plataforma, en la propia conversación de WhatsApp, o al correo electrónico registrado.
+  </p>
+  <p>
+    En todo lo no regulado expresamente en este anexo, se aplican los Términos Generales de Urbby en
+    su totalidad, incluyendo sus cláusulas de capacidad, responsabilidad, propiedad intelectual, uso
+    indebido, jurisdicción y ley aplicable.
+  </p>
+
+  <h3>12. Titular y contacto</h3>
+  <p>
+    El sitio y la marca “Urbby” son operados por {empresa.razonSocial}, con domicilio en
+    {' '}{direccionCompleta}. Consultas sobre estos términos:
+    {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a> · {empresa.telefono}. Estos
+    términos se rigen por las leyes de la República de El Salvador y cualquier controversia se somete
+    a los tribunales competentes de San Salvador.
+  </p>
+</Legal>

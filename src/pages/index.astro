@@ -1,73 +1,50 @@
 ---
 import Base from '../layouts/Base.astro';
-import ChatDemo from '../components/ChatDemo.astro';
 import { empresa } from '../data/empresa';
-
-const capacidades = [
-  {
-    titulo: 'Bandeja unificada de WhatsApp',
-    texto:
-      'Todas las conversaciones del número oficial de WhatsApp Business llegan a un solo lugar. Nada se pierde entre teléfonos personales ni entre turnos del equipo.',
-    icono: 'inbox',
-  },
-  {
-    titulo: 'Agentes de venta por IA',
-    texto:
-      'Los agentes de inteligencia artificial responden solos: informan precios, disponibilidad y tiempos de entrega, arman el pedido y lo llevan hasta la confirmación.',
-    icono: 'bot',
-  },
-  {
-    titulo: 'Ficha e historial del cliente',
-    texto:
-      'Cada conversación es un registro: quién escribe, qué consultó antes, qué compró, a qué dirección se le entregó y en qué estado va su pedido.',
-    icono: 'file',
-  },
-  {
-    titulo: 'Escalamiento a una persona',
-    texto:
-      'Cuando el caso lo pide, o cuando el cliente lo pide, la conversación pasa a un agente humano con todo el contexto ya cargado.',
-    icono: 'user',
-  },
-];
 
 const pasos = [
   {
-    titulo: 'Llega el mensaje',
+    titulo: 'Elegís y armás tu carrito',
     texto:
-      'El cliente escribe al número oficial de WhatsApp, verificado ante Meta. Es el único canal de mensajería.',
+      'Buscá y compará productos de distintos Comercios afiliados. Un mismo carrito puede incluir productos de varios Comercios.',
   },
   {
-    titulo: 'Urbby Bot entiende',
+    titulo: 'Confirmás con el total a la vista',
     texto:
-      'Interpreta la consulta y la cruza con el catálogo de los comercios afiliados: disponibilidad, precios y zonas de entrega.',
+      'Antes de confirmar ves el precio, el costo de envío y el tiempo estimado de entrega. Nada aparece después.',
   },
   {
-    titulo: 'Arma y confirma el pedido',
+    titulo: 'Pagás con Urbby Pay',
     texto:
-      'Presenta un resumen con productos, total, costo de envío y dirección. Queda confirmado cuando el cliente lo acepta o completa el pago.',
+      'Con tarjeta, procesada por Banco Agrícola. Según el Comercio y la zona, también podés pagar contra entrega.',
   },
   {
-    titulo: 'Escala y da seguimiento',
+    titulo: 'Xpress te lo lleva',
     texto:
-      'Si hace falta, pasa a un agente humano; después sigue el envío y atiende reclamos, cambios y devoluciones por el mismo chat.',
+      'El Comercio prepara el pedido, Xpress lo recolecta y lo entrega en la dirección que indicaste, con cobertura nacional.',
   },
 ];
 
-const garantias = [
+const envios = [
   {
-    titulo: 'Sobre WhatsApp Business Platform',
+    titulo: '24 horas hábiles',
     texto:
-      'Urbby Bot se opera exclusivamente sobre WhatsApp Business Platform. Meta actúa como encargado del tratamiento de los mensajes transmitidos por su infraestructura.',
+      'Plazo estándar desde el día hábil siguiente a la recolección. Lo recolectado antes de las 2:00 p.m. entra en la ventana de ese mismo día hábil. Por fuerza mayor puede extenderse hasta 48 horas hábiles.',
   },
   {
-    titulo: 'Pagos fuera del chat',
+    titulo: 'Tres intentos de entrega',
     texto:
-      'El flujo de pago proviene siempre de Urbby Pay. Urbby Bot nunca pide dentro del chat el número completo de tarjeta, el CVV ni la clave de acceso; solo recibimos un token por transacción.',
+      'Xpress intenta entregar hasta tres veces en la dirección que indicaste. Las redirecciones de dirección no tienen costo adicional. Agotados los tres intentos, el pedido vuelve al Comercio.',
   },
   {
-    titulo: 'Siempre identificado',
+    titulo: 'Seguro de hasta USD $100',
     texto:
-      'Urbby Bot se presenta como asistente automatizado y ofrece en todo momento la opción de ser atendido por un agente humano.',
+      'Por guía, o el valor declarado en factura si es menor, por daños comprobados de mala manipulación en el transporte. El reclamo se reporta por escrito dentro de las 24 horas hábiles siguientes a la entrega.',
+  },
+  {
+    titulo: 'Cobertura nacional',
+    texto:
+      'En cantones, caseríos y zonas de difícil acceso, el punto de entrega se coordina directamente con el repartidor de Xpress.',
   },
 ];
 
@@ -81,114 +58,94 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
 ---
 
 <Base
-  title="Urbby Bot — CRM de atención y ventas por WhatsApp"
-  description="Urbby Bot es el CRM con agentes de venta por IA que atiende a los clientes de Urbby por WhatsApp: centraliza las conversaciones, arma pedidos y escala a un agente humano cuando hace falta."
+  title="Urbby — Marketplace salvadoreño con pagos y envíos a todo el país"
+  description="Urbby conecta compradores con comercios afiliados en El Salvador. Pagá con Urbby Pay, con tarjeta o contra entrega, y recibí con Xpress en 24 horas hábiles."
 >
   {/* ===================== HERO ===================== */}
   <section class="py-[clamp(56px,9vw,104px)] max-sm:py-11">
-    <div class={`${shell} grid grid-cols-[1.08fr_0.92fr] items-center gap-[clamp(32px,5vw,64px)] max-lg:grid-cols-1`}>
+    <div class={`${shell} grid grid-cols-[1.05fr_0.95fr] items-center gap-[clamp(32px,5vw,64px)] max-lg:grid-cols-1`}>
       <div>
-        <p data-reveal class={eyebrow}>CRM conversacional · WhatsApp Business</p>
+        <p data-reveal class={eyebrow}>Marketplace · El Salvador</p>
         <h1 data-reveal class="text-[clamp(38px,6.4vw,66px)] font-extrabold italic leading-[1.05] tracking-tight">
-          Atender y vender por WhatsApp, sin perder un mensaje.
+          Comprá de muchos comercios, recibí en un solo lugar.
         </h1>
         <p data-reveal class="mt-[22px] max-w-[62ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft">
-          <strong class="text-white">Urbby Bot</strong> es un CRM con agentes de venta por
-          inteligencia artificial: centraliza en un solo lugar las conversaciones de WhatsApp,
-          responde automáticamente, arma el pedido y lo pasa a una persona cuando hace falta.
-        </p>
-        <p data-reveal class="mt-4 max-w-[62ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft">
-          Es el complemento de atención de <strong class="text-white">Urbby</strong>, el marketplace
-          que conecta a compradores con comercios afiliados en El Salvador, con pagos por Urbby Pay y
-          entregas por Xpress.
+          <strong class="text-white">Urbby</strong> es un marketplace que conecta a compradores con
+          <strong class="text-white">Comercios afiliados</strong> en todo El Salvador. Pagás con
+          <strong class="text-white">Urbby Pay</strong> —tarjeta o contra entrega— y
+          <strong class="text-white">Xpress</strong> te lo lleva a la puerta.
         </p>
         <div data-reveal class="mt-8 flex flex-wrap gap-3.5 max-sm:flex-col">
           <a
-            href="#contacto"
+            href="#como-comprar"
             class="inline-flex min-h-[52px] items-center justify-center rounded-full bg-brand px-7 text-base font-bold text-navy-900 no-underline transition-colors hover:bg-brand-soft active:translate-y-px"
           >
-            Escribinos por WhatsApp
+            Cómo comprar
           </a>
           <a
-            href="#como-funciona"
+            href="#envios"
             class="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/35 px-7 text-base font-bold text-white no-underline transition-colors hover:border-brand hover:bg-white/5 active:translate-y-px"
           >
-            Ver cómo funciona
+            Ver cobertura y plazos
           </a>
         </div>
         <p data-reveal class="mt-5 text-sm text-ink-mute">
-          Urbby Bot es operado por {empresa.razonSocial}, {empresa.ciudad}, {empresa.pais}.
+          Operado por {empresa.razonSocial}, {empresa.ciudad}, {empresa.pais}.
         </p>
       </div>
 
-      <ChatDemo />
-    </div>
-  </section>
-
-  {/* ===================== QUÉ ES URBBY BOT ===================== */}
-  <section id="urbby-bot" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
-    <p data-reveal class={eyebrow}>Qué es Urbby Bot</p>
-    <h2 data-reveal class={h2}>Un CRM que vive dentro de la conversación.</h2>
-    <p data-reveal class={lede}>
-      No es un chatbot suelto: es la capa de atención donde se registra cada cliente, cada consulta y
-      cada pedido, sobre el único canal que nuestros clientes en El Salvador ya usan todos los días.
-    </p>
-
-    <div class="mt-9 grid grid-cols-2 gap-5 max-lg:grid-cols-1">
-      {
-        capacidades.map((c) => (
-          <div data-reveal="card" class={tarjeta}>
-            <div class={iconoCaja}>
-              {c.icono === 'inbox' && (
-                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
-                  <path d="M3 13h5l1.5 2.5h5L16 13h5" />
-                  <path d="M5.5 5h13l2.5 8v4.5a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 17.5V13l2.5-8Z" />
-                </svg>
-              )}
-              {c.icono === 'bot' && (
-                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
-                  <rect x="3.5" y="7.5" width="17" height="12" rx="3.5" />
-                  <path d="M12 3.5v4M8.5 13h.01M15.5 13h.01M9.5 16.5h5" />
-                </svg>
-              )}
-              {c.icono === 'file' && (
-                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
-                  <path d="M6 3.5h7.5L19 9v11.5H6z" />
-                  <path d="M13 3.5V9h5.5M9 13h6M9 16.5h4" />
-                </svg>
-              )}
-              {c.icono === 'user' && (
-                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
-                  <circle cx="12" cy="8.5" r="3.5" />
-                  <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
-                </svg>
-              )}
+      {/* Resumen del ecosistema */}
+      <div data-reveal="card" class="rounded-card border border-white/15 bg-gradient-to-b from-white/12 to-white/5 p-7 shadow-[0_30px_60px_-28px_rgba(0,0,0,0.65)]">
+        <p class="mb-5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">El ecosistema Urbby</p>
+        <dl class="m-0 flex flex-col gap-5">
+          <div class="flex gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-brand/35 bg-brand/15">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+                <path d="M3 6h18l-1.6 9.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 6" />
+                <circle cx="9" cy="20" r="1.4" /><circle cx="17" cy="20" r="1.4" />
+              </svg>
             </div>
-            <h3 class="mb-2.5 text-xl font-bold not-italic">{c.titulo}</h3>
-            <p class="text-[15.5px] text-ink-soft">{c.texto}</p>
+            <div>
+              <dt class="text-base font-bold">Marketplace</dt>
+              <dd class="m-0 text-[15px] text-ink-soft">Buscá, compará y comprá productos de distintos Comercios afiliados.</dd>
+            </div>
           </div>
-        ))
-      }
+          <div class="flex gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-brand/35 bg-brand/15">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+                <rect x="2.5" y="5.5" width="19" height="13" rx="2.5" /><path d="M2.5 10h19" />
+              </svg>
+            </div>
+            <div>
+              <dt class="text-base font-bold">Urbby Pay</dt>
+              <dd class="m-0 text-[15px] text-ink-soft">Pagos con tarjeta procesados por Banco Agrícola, o contra entrega donde aplique.</dd>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-brand/35 bg-brand/15">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+                <path d="M2.5 7.5h11v9h-11zM13.5 11h4l3 3v2.5h-7z" />
+                <circle cx="6.5" cy="18" r="1.6" /><circle cx="17" cy="18" r="1.6" />
+              </svg>
+            </div>
+            <div>
+              <dt class="text-base font-bold">Envíos con Xpress</dt>
+              <dd class="m-0 text-[15px] text-ink-soft">Recolección en el Comercio y entrega a domicilio con cobertura nacional.</dd>
+            </div>
+          </div>
+        </dl>
+      </div>
     </div>
   </section>
 
-  {/* ===================== CÓMO FUNCIONA ===================== */}
-  <section id="como-funciona" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
-    <p data-reveal class={eyebrow}>Cómo funciona Urbby Bot</p>
-    <h2 data-reveal class={h2}>Del mensaje del cliente al pedido confirmado.</h2>
-
-    <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-      <span data-reveal="chip" class="inline-flex items-center gap-2.5 rounded-full border border-brand/35 bg-brand/15 px-5 py-2.5 text-[15px] font-semibold">
-        <svg viewBox="0 0 24 24" class="h-[19px] w-[19px] fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-          <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 3.6 11 8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z" />
-        </svg>
-        WhatsApp Business · canal exclusivo
-      </span>
-      <p data-reveal="chip" class="max-w-[58ch] text-sm text-ink-mute">
-        Atendemos únicamente desde un número oficial de WhatsApp verificado ante Meta.
-        Urbby Bot no opera ningún otro canal de mensajería.
-      </p>
-    </div>
+  {/* ===================== CÓMO COMPRAR ===================== */}
+  <section id="como-comprar" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Cómo comprar</p>
+    <h2 data-reveal class={h2}>Del carrito a tu puerta, en cuatro pasos.</h2>
+    <p data-reveal class={lede}>
+      Urbby es un intermediario tecnológico: los productos son de los Comercios afiliados, y nosotros
+      ponemos la plataforma, el pago y la coordinación del envío.
+    </p>
 
     <ol class="mt-9 grid list-none grid-cols-4 gap-4.5 p-0 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {
@@ -204,15 +161,166 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
       }
     </ol>
 
-    <div class="mt-5.5 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+    <div data-reveal="card" class="mt-5 rounded-tile border border-brand/35 bg-brand/10 p-6">
+      <p class="m-0 text-[15.5px] text-white">
+        <strong>Sobre el costo de envío:</strong> se calcula por zona de origen. Si tu carrito incluye
+        Comercios de zonas distintas, la orden puede dividirse en varios envíos y generar más de un
+        cargo. Siempre lo ves desglosado antes de confirmar.
+      </p>
+    </div>
+  </section>
+
+  {/* ===================== URBBY PAY ===================== */}
+  <section id="pagos" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Urbby Pay</p>
+    <h2 data-reveal class={h2}>Pagá como te quede mejor.</h2>
+
+    <div class="mt-9 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      <div data-reveal="card" class={tarjeta}>
+        <div class={iconoCaja}>
+          <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+            <rect x="2.5" y="5.5" width="19" height="13" rx="2.5" /><path d="M2.5 10h19M6 14.5h4" />
+          </svg>
+        </div>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Con tarjeta</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Los pagos se procesan a través de Banco Agrícola. Urbby <strong class="text-white">no
+          almacena ni tiene acceso</strong> a los datos completos de tu tarjeta: únicamente recibe un
+          token por cada transacción.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <div class={iconoCaja}>
+          <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+            <path d="M12 3.5v17M8 7h6.5a2.75 2.75 0 0 1 0 5.5h-5a2.75 2.75 0 0 0 0 5.5H16" />
+          </svg>
+        </div>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Contra entrega</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Según el Comercio y la zona, podés pagar al recibir. El cobro lo hace el personal de Xpress
+          al momento de la entrega, en efectivo o con terminal de tarjeta.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <div class={iconoCaja}>
+          <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+            <path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1" /><path d="M20.5 4v4.5H16" />
+          </svg>
+        </div>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Reembolsos</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Si te corresponde un reembolso, lo gestionamos una vez recibidos los fondos de Xpress o del
+          Comercio. El proceso puede tomar algunos días hábiles mientras se completa esa gestión.
+        </p>
+      </div>
+    </div>
+
+    <p data-reveal class="mt-5 max-w-[80ch] text-sm text-ink-mute">
+      Los precios se muestran en dólares de los Estados Unidos de América e incluyen los impuestos
+      aplicables, salvo que se indique lo contrario. El costo de envío se calcula y se muestra por
+      separado antes de confirmar la compra.
+    </p>
+  </section>
+
+  {/* ===================== ENVÍOS ===================== */}
+  <section id="envios" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Envíos con Xpress</p>
+    <h2 data-reveal class={h2}>Plazos, intentos y cobertura, sin letra chica.</h2>
+
+    <div class="mt-9 grid grid-cols-2 gap-5 max-lg:grid-cols-1">
       {
-        garantias.map((g) => (
+        envios.map((e) => (
           <div data-reveal="card" class={tarjeta}>
-            <h3 class="mb-2.5 text-xl font-bold not-italic">{g.titulo}</h3>
-            <p class="text-[15.5px] text-ink-soft">{g.texto}</p>
+            <h3 class="mb-2.5 text-xl font-bold not-italic">{e.titulo}</h3>
+            <p class="text-[15.5px] text-ink-soft">{e.texto}</p>
           </div>
         ))
       }
+    </div>
+
+    <div data-reveal="card" class="mt-5 rounded-tile border border-white/15 bg-white/4 p-6">
+      <h3 class="mb-2.5 text-[17px] font-bold not-italic">Qué no cubre el seguro</h3>
+      <p class="m-0 text-[15px] text-ink-soft">
+        Los productos de vidrio, espejos, porcelanas, cerámicas, muebles con vidrio o melamina,
+        artesanías de barro, plantas naturales y productos perecederos se envían bajo responsabilidad
+        exclusiva del Comercio remitente y no cuentan con cobertura de seguro de Xpress. El embalaje
+        siempre es responsabilidad del Comercio vendedor.
+      </p>
+      <p class="mt-3 mb-0 text-[15px] text-ink-soft">
+        Tampoco se aceptan envíos de dinero en efectivo, materiales peligrosos, piedras preciosas,
+        artículos de oro, títulos negociables, animales ni cheques de caja o gerencia.
+      </p>
+    </div>
+  </section>
+
+  {/* ===================== TUS DERECHOS ===================== */}
+  <section id="derechos" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Tus derechos</p>
+    <h2 data-reveal class={h2}>Comprás protegido.</h2>
+
+    <div class="mt-9 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      <div data-reveal="card" class={tarjeta}>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Protección al consumidor</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Conservás todos los derechos que te reconoce la Ley de Protección al Consumidor de El
+          Salvador: información veraz sobre el producto y su precio, trato equitativo y no
+          discriminatorio, y la posibilidad de reclamar ante la Defensoría del Consumidor.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Cancelaciones y devoluciones</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Podés cancelar una orden antes de que el Comercio la despache. Después, se gestiona como
+          devolución o cambio según la política del Comercio, que está publicada en su perfil dentro
+          de la plataforma.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <h3 class="mb-2.5 text-xl font-bold not-italic">Tus datos personales</h3>
+        <p class="text-[15.5px] text-ink-soft">
+          Tratamos tus datos conforme a la Ley para la Protección de Datos Personales (Decreto
+          Legislativo N.º 144). Podés ejercer tus derechos ARCO-POL cuando quieras, y
+          <strong class="text-white"> no vendemos ni comercializamos</strong> tus datos.
+        </p>
+      </div>
+    </div>
+
+    <p data-reveal class="mt-6 max-w-[84ch] text-[15.5px] text-ink-soft">
+      Los reclamos sobre calidad, garantía o características del producto se dirigen primero al
+      Comercio vendedor, por los canales de su perfil. Los reclamos sobre el pago o el envío podés
+      dirigirlos directamente a Urbby. Leé el detalle en los
+      {' '}<a href="/terminos" class="font-semibold">Términos y Condiciones</a> y en la
+      {' '}<a href="/privacidad" class="font-semibold">Declaración de Privacidad</a>.
+    </p>
+  </section>
+
+  {/* ===================== URBBY BOT ===================== */}
+  <section class={`${shell} py-[clamp(40px,6vw,72px)]`}>
+    <div data-reveal="card" class="rounded-card border border-brand/35 bg-white/9 p-[clamp(26px,4vw,44px)]">
+      <div class="flex items-start gap-6 max-sm:flex-col">
+        <img src="/assets/urbby.png" alt="" width="56" height="56" class="h-14 w-14 shrink-0 rounded-2xl" />
+        <div>
+          <p class="mb-2 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">También en WhatsApp</p>
+          <h2 class="text-[clamp(24px,3.2vw,32px)] font-extrabold italic leading-[1.1] tracking-tight">
+            Urbby Bot te atiende por WhatsApp.
+          </h2>
+          <p class="mt-3 max-w-[70ch] text-[16px] text-ink-soft">
+            Nuestro CRM con agentes de venta por inteligencia artificial responde consultas, arma el
+            pedido y lo lleva hasta la confirmación, sin salir del chat. Si hace falta, te pasa con
+            una persona del equipo.
+          </p>
+          <a
+            href="/urbby-bot"
+            class="mt-5 inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand px-6 text-[15px] font-bold text-navy-900 no-underline transition-colors hover:bg-brand-soft"
+          >
+            Conocer Urbby Bot
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -221,8 +329,8 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
     <p data-reveal class={eyebrow}>Contacto</p>
     <h2 data-reveal class={h2}>Estamos acá para ayudarte.</h2>
     <p data-reveal class={lede}>
-      Escribinos por cualquiera de estos medios. Urbby Bot está disponible 24/7 para consultas y
-      pedidos; la atención por agentes humanos se brinda en horario hábil.
+      Para reclamos sobre el pago o el envío, escribinos directamente. Para temas del producto,
+      contactá primero al Comercio vendedor desde su perfil.
     </p>
 
     <div class="mt-9 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
@@ -234,19 +342,19 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
           </a>
         </p>
         <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
-          Atención al cliente y ejercicio de derechos ARCO-POL.
+          Soporte, reclamos y derechos ARCO-POL.
         </p>
       </div>
 
       <div data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-6">
-        <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">WhatsApp oficial</p>
+        <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">Teléfono / WhatsApp</p>
         <p class="break-words text-base font-semibold">
           <a href={`tel:${empresa.telefonoEnlace}`} class="border-b border-brand/55 text-white no-underline hover:text-brand">
             {empresa.telefono}
           </a>
         </p>
         <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
-          Único número oficial de Urbby Bot, verificado ante Meta.
+          Único número oficial, verificado ante Meta.
         </p>
       </div>
 

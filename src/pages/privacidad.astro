@@ -4,59 +4,61 @@ import { empresa, direccionCompleta } from '../data/empresa';
 ---
 
 <Legal
-  title="Política de Privacidad — Urbby Bot"
-  description="Qué datos trata Urbby El Salvador S.A. de C.V. cuando atendés por WhatsApp, para qué los usa, con quién los comparte y cómo pedir su eliminación."
-  heading="Política de Privacidad"
+  title="Declaración de Privacidad — Urbby"
+  description="Qué datos personales trata Urbby El Salvador S.A. de C.V. en el marketplace y en el canal de WhatsApp, para qué los usa, con quién los comparte y cómo ejercer tus derechos ARCO-POL."
+  heading="Declaración de Privacidad"
+  intro="Esta Declaración explica cómo Urbby El Salvador S.A. de C.V. trata tus datos personales cuando comprás en la plataforma urbby.app y cuando nos escribís por WhatsApp. Se rige por la Ley para la Protección de Datos Personales de El Salvador (Decreto Legislativo N.º 144)."
 >
-  <h3>1. Quiénes somos</h3>
+  <h3>1. Responsable del tratamiento</h3>
   <p>
     {empresa.razonSocial}, sociedad constituida en la República de El Salvador, con domicilio en
-    {' '}{direccionCompleta}, opera la plataforma {empresa.dominio}, la marca comercial “Urbby” y el
+    {' '}{direccionCompleta}, es la responsable del tratamiento de tus datos personales. Opera la
+    plataforma {empresa.dominio}, la marca comercial “Urbby”, la solución de pagos “Urbby Pay” y el
     asistente automatizado “Urbby Bot”.
+  </p>
+  <p>
+    Podés contactar al <strong>delegado de protección de datos personales</strong> de Urbby en
+    {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a> o al {empresa.telefono}.
   </p>
 
   <h3>2. Qué datos recolectamos</h3>
-  <p>
-    Cuando nos escribís por WhatsApp —nuestro único canal de mensajería— o usás la plataforma,
-    podemos tratar:
-  </p>
+  <p>Según cómo uses Urbby, podemos tratar:</p>
   <ul>
-    <li><strong>Datos de identificación:</strong> tu nombre o el nombre de tu perfil público de WhatsApp.</li>
-    <li><strong>Datos de contacto:</strong> tu número de teléfono de WhatsApp y, si lo proporcionás, tu correo electrónico.</li>
-    <li><strong>Contenido de los mensajes:</strong> el texto, las imágenes o los archivos que intercambiás con Urbby Bot, y las respuestas que recibís.</li>
-    <li><strong>Datos del pedido:</strong> productos consultados o comprados, dirección de entrega, método de pago elegido y estado del envío.</li>
-    <li><strong>Datos de pago:</strong> únicamente el <strong>token</strong> generado por cada transacción. Urbby no almacena ni tiene acceso al número completo de tarjeta, la fecha de vencimiento ni el CVV.</li>
-    <li><strong>Datos técnicos básicos:</strong> marca temporal del mensaje y canal de origen, necesarios para dar seguimiento al caso.</li>
+    <li><strong>Datos de cuenta:</strong> nombre, correo electrónico, teléfono y las credenciales o factores de seguridad que configurés al registrarte.</li>
+    <li><strong>Datos de la compra:</strong> productos consultados y comprados, Comercio vendedor, monto, fecha y estado de la orden.</li>
+    <li><strong>Datos de entrega:</strong> la dirección que ingresás al finalizar la compra, junto con las referencias e indicaciones que agregues.</li>
+    <li><strong>Datos de pago:</strong> únicamente el <strong>token</strong> generado por cada transacción. Urbby no almacena ni tiene acceso al número completo de tu tarjeta, su fecha de vencimiento ni el código de seguridad.</li>
+    <li><strong>Datos del canal de WhatsApp:</strong> tu número de teléfono de WhatsApp, el nombre de tu perfil público y el contenido de los mensajes intercambiados con Urbby Bot.</li>
+    <li><strong>Datos técnicos básicos:</strong> marca temporal y canal de origen de cada interacción, necesarios para dar seguimiento al caso.</li>
   </ul>
 
-  <h3>3. Para qué usamos tus datos</h3>
+  <h3>3. Para qué usamos tus datos y con qué base legal</h3>
+  <p>
+    La base principal del tratamiento es la <strong>relación contractual</strong> derivada de tu
+    compra; en lo demás, tu <strong>consentimiento</strong> al iniciar la conversación o registrarte,
+    y nuestro <strong>interés legítimo</strong> en operar y mejorar la plataforma. Usamos tus datos para:
+  </p>
   <ul>
-    <li>Brindarte atención a través de Urbby Bot y de nuestros agentes humanos.</li>
-    <li>Informarte sobre productos de los comercios afiliados, precios, disponibilidad, formas de pago y tiempos de entrega.</li>
-    <li>Armar, procesar, despachar y dar seguimiento a tus pedidos.</li>
-    <li>Emitir el comprobante y la factura correspondientes a cada compra confirmada.</li>
-    <li>Atender reclamos, cambios, devoluciones y soporte postventa.</li>
-    <li>Mejorar la calidad de nuestras respuestas y del servicio.</li>
+    <li>Crear y administrar tu cuenta, y verificar tu identidad cuando sea necesario.</li>
+    <li>Procesar la compra, el pago y el envío de tu pedido.</li>
+    <li>Emitir el comprobante y la factura de cada compra confirmada.</li>
+    <li>Brindarte atención al cliente por la plataforma y por Urbby Bot en WhatsApp.</li>
+    <li>Atender reclamos, cambios, devoluciones y solicitudes de garantía.</li>
+    <li>Prevenir el fraude y proteger la integridad de la plataforma, de otras Personas Usuarias y de los Comercios.</li>
     <li>Cumplir obligaciones legales, contables y fiscales aplicables en El Salvador.</li>
   </ul>
-  <p>
-    La base del tratamiento es la ejecución de la relación comercial que solicitás, tu consentimiento
-    al iniciar la conversación y nuestro interés legítimo en atender y mejorar el servicio.
-  </p>
 
   <h3>4. Con quién los compartimos</h3>
-  <p>No vendemos, alquilamos ni cedemos tus datos personales. Los compartimos únicamente con:</p>
+  <p>
+    <strong>Urbby no vende ni comercializa tus datos personales</strong> a terceros ajenos al
+    procesamiento de la compra, el pago o el envío. Los compartimos únicamente con:
+  </p>
   <ul>
-    <li>
-      <strong>Meta Platforms, Inc.</strong>, que actúa como <em>encargado del tratamiento</em> respecto
-      de los mensajes transmitidos a través de su infraestructura (WhatsApp Business Platform),
-      conforme a sus propios términos de servicio. El uso que hacés de WhatsApp también se rige por
-      las políticas de WhatsApp/Meta, ajenas a Urbby.
-    </li>
-    <li><strong>Banco Agrícola</strong>, como procesador de pagos de Urbby Pay, para autorizar y liquidar las transacciones.</li>
-    <li><strong>Xpress</strong>, como operador logístico, exclusivamente los datos necesarios para entregarte tu pedido.</li>
-    <li><strong>Comercios afiliados</strong>, los datos indispensables para preparar y despachar el pedido que les comprás y para atender su postventa.</li>
-    <li><strong>Proveedores tecnológicos</strong> que alojan y operan Urbby Bot y nuestros sistemas internos, bajo obligaciones de confidencialidad y solo para prestarnos el servicio.</li>
+    <li><strong>El Comercio afiliado</strong> al que le comprás: los datos indispensables para preparar y despachar tu pedido y para atender su postventa.</li>
+    <li><strong>Xpress</strong>, la empresa aliada de logística: tu nombre, teléfono y dirección de entrega, únicamente para procesar y entregar el envío. Si elegís pago contra entrega, también el monto a cobrar.</li>
+    <li><strong>Banco Agrícola</strong>, como procesador de pagos de Urbby Pay, para autorizar y liquidar las transacciones con tarjeta.</li>
+    <li><strong>Meta Platforms, Inc.</strong>, que actúa como encargado del tratamiento respecto de los mensajes transmitidos por su infraestructura (WhatsApp Business Platform), conforme a sus propios términos de servicio. El uso que hacés de WhatsApp también se rige por las políticas de WhatsApp/Meta, ajenas a Urbby.</li>
+    <li><strong>Proveedores tecnológicos</strong> que alojan y operan la plataforma y Urbby Bot, bajo obligaciones de confidencialidad y solo para prestarnos el servicio.</li>
     <li><strong>Autoridades competentes</strong>, cuando exista una obligación legal o un requerimiento válido.</li>
   </ul>
   <p>
@@ -66,64 +68,68 @@ import { empresa, direccionCompleta } from '../data/empresa';
 
   <h3>5. Cuánto tiempo los conservamos</h3>
   <p>
-    Conservamos las conversaciones y los datos asociados mientras dure la relación comercial y por el
-    plazo adicional que exija la normativa mercantil y tributaria salvadoreña. Cumplido ese plazo, los
-    eliminamos o los anonimizamos.
+    Conservamos tus datos mientras mantengas una cuenta activa o exista una relación comercial
+    vigente, y por el plazo adicional que exija la normativa mercantil y tributaria salvadoreña
+    —especialmente para comprobantes y facturas—. Cumplido ese plazo, los eliminamos o los
+    anonimizamos.
   </p>
 
-  <h3>6. Tus derechos (ARCO-POL) y cómo eliminar tus datos</h3>
+  <h3>6. Tus derechos ARCO-POL</h3>
   <p>
-    Podés ejercer en cualquier momento tus derechos de <strong>acceso</strong>,
-    <strong>rectificación</strong>, <strong>cancelación</strong>, <strong>oposición</strong>,
-    <strong>portabilidad</strong>, <strong>oposición a decisiones automatizadas</strong> y
-    <strong>limitación</strong> del tratamiento, así como retirar tu consentimiento o pedir que
-    dejemos de contactarte.
+    Podés ejercer en cualquier momento tus derechos de <strong>Acceso</strong>,
+    <strong>Rectificación</strong>, <strong>Cancelación</strong>, <strong>Oposición</strong>,
+    <strong>Portabilidad</strong>, <strong>Olvido</strong> y <strong>Limitación</strong> sobre tus
+    datos personales, así como retirar tu consentimiento o pedir que dejemos de contactarte.
   </p>
 
   <div class="my-5 rounded-tile border border-brand/35 bg-brand/10 p-6">
-    <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">
-      Solicitud de eliminación de datos
-    </p>
+    <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">Cómo ejercerlos</p>
     <p class="text-white">
-      Escribí a <a href={`mailto:${empresa.correo}`}>{empresa.correo}</a>, dirigido al delegado de
-      protección de datos personales de Urbby, con el asunto <strong>“Solicitud de datos
-      personales”</strong>, indicando tu nombre y el número de WhatsApp desde el que nos escribiste.
-      Respondemos dentro de los <strong>15 días hábiles</strong> siguientes.
+      Escribí al delegado de protección de datos personales de Urbby a
+      {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a>, indicando tu nombre y el correo
+      o número de teléfono asociado a tu cuenta. Respondemos dentro de los
+      {' '}<strong>15 días hábiles</strong> siguientes.
     </p>
     <p class="mb-0 text-white">
-      También podés enviar tu solicitud por escrito a {direccionCompleta}, o llamarnos al
-      {' '}{empresa.telefono}. El procedimiento completo está en
-      {' '}<a href="/eliminar-datos">Eliminación de datos</a>.
+      El procedimiento detallado para pedir la eliminación está en
+      {' '}<a href="/eliminar-datos">Eliminación de datos</a>. También podés escribirnos a
+      {' '}{direccionCompleta} o llamarnos al {empresa.telefono}.
     </p>
   </div>
 
+  <h3>7. Vulneraciones de seguridad</h3>
   <p>
-    Bloquear o eliminar la conversación desde tu propia aplicación de WhatsApp solo afecta tu
-    dispositivo; para borrar los datos de nuestros sistemas, enviá la solicitud por los medios
-    indicados arriba.
-  </p>
-
-  <h3>7. Menores de edad</h3>
-  <p>
-    Nuestros servicios están dirigidos a personas mayores de 18 años. No recolectamos de forma
-    intencional datos de menores de edad; si detectamos que lo hicimos, los eliminamos.
+    En caso de una vulneración de seguridad que afecte tus datos personales, Urbby notificará a la
+    <strong> Agencia de Ciberseguridad del Estado</strong>, a la
+    <strong> Fiscalía General de la República</strong> y a las personas afectadas, dentro de los
+    plazos que establece la ley.
   </p>
 
   <h3>8. Seguridad</h3>
   <p>
     Aplicamos medidas técnicas y organizativas razonables —control de accesos, cifrado en tránsito,
     tokenización de los datos de pago y registro de actividad— para proteger tu información frente a
-    acceso, alteración o divulgación no autorizados.
+    acceso, alteración o divulgación no autorizados. Vos también sos responsable de mantener bajo
+    estricta confidencialidad tu clave y los factores de seguridad de tu cuenta.
   </p>
 
-  <h3>9. Cambios a esta política</h3>
+  <h3>9. Menores de edad</h3>
   <p>
-    Podemos actualizar esta política. Publicaremos la versión vigente en esta misma página, indicando
-    la fecha de última actualización, y comunicaremos con al menos <strong>10 días corridos</strong>
-    {' '}de anticipación los cambios que afecten tus derechos u obligaciones.
+    La plataforma está dirigida a personas mayores de edad con capacidad legal para contratar. Las
+    personas menores de edad solo pueden utilizarla con la autorización y bajo la supervisión de su
+    representante legal. No recolectamos de forma intencional datos de menores de edad al margen de
+    ese supuesto; si detectamos que lo hicimos, los eliminamos.
   </p>
 
-  <h3>10. Contacto</h3>
+  <h3>10. Cambios a esta Declaración</h3>
+  <p>
+    Podemos actualizar esta Declaración. Publicaremos la versión vigente en esta misma página,
+    indicando la fecha de última actualización, y comunicaremos con al menos
+    <strong> 10 días corridos</strong> de anticipación los cambios que afecten tus derechos u
+    obligaciones, mediante notificación en la plataforma y/o al correo electrónico registrado.
+  </p>
+
+  <h3>11. Contacto</h3>
   <p>
     {empresa.razonSocial} · {direccionCompleta} ·
     {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a> · {empresa.telefono}
