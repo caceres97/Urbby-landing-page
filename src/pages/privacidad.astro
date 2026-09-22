@@ -1,0 +1,131 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { empresa, direccionCompleta } from '../data/empresa';
+---
+
+<Legal
+  title="Política de Privacidad — Urbby Bot"
+  description="Qué datos trata Urbby El Salvador S.A. de C.V. cuando atendés por WhatsApp, para qué los usa, con quién los comparte y cómo pedir su eliminación."
+  heading="Política de Privacidad"
+>
+  <h3>1. Quiénes somos</h3>
+  <p>
+    {empresa.razonSocial}, sociedad constituida en la República de El Salvador, con domicilio en
+    {' '}{direccionCompleta}, opera la plataforma {empresa.dominio}, la marca comercial “Urbby” y el
+    asistente automatizado “Urbby Bot”.
+  </p>
+
+  <h3>2. Qué datos recolectamos</h3>
+  <p>
+    Cuando nos escribís por WhatsApp —nuestro único canal de mensajería— o usás la plataforma,
+    podemos tratar:
+  </p>
+  <ul>
+    <li><strong>Datos de identificación:</strong> tu nombre o el nombre de tu perfil público de WhatsApp.</li>
+    <li><strong>Datos de contacto:</strong> tu número de teléfono de WhatsApp y, si lo proporcionás, tu correo electrónico.</li>
+    <li><strong>Contenido de los mensajes:</strong> el texto, las imágenes o los archivos que intercambiás con Urbby Bot, y las respuestas que recibís.</li>
+    <li><strong>Datos del pedido:</strong> productos consultados o comprados, dirección de entrega, método de pago elegido y estado del envío.</li>
+    <li><strong>Datos de pago:</strong> únicamente el <strong>token</strong> generado por cada transacción. Urbby no almacena ni tiene acceso al número completo de tarjeta, la fecha de vencimiento ni el CVV.</li>
+    <li><strong>Datos técnicos básicos:</strong> marca temporal del mensaje y canal de origen, necesarios para dar seguimiento al caso.</li>
+  </ul>
+
+  <h3>3. Para qué usamos tus datos</h3>
+  <ul>
+    <li>Brindarte atención a través de Urbby Bot y de nuestros agentes humanos.</li>
+    <li>Informarte sobre productos de los comercios afiliados, precios, disponibilidad, formas de pago y tiempos de entrega.</li>
+    <li>Armar, procesar, despachar y dar seguimiento a tus pedidos.</li>
+    <li>Emitir el comprobante y la factura correspondientes a cada compra confirmada.</li>
+    <li>Atender reclamos, cambios, devoluciones y soporte postventa.</li>
+    <li>Mejorar la calidad de nuestras respuestas y del servicio.</li>
+    <li>Cumplir obligaciones legales, contables y fiscales aplicables en El Salvador.</li>
+  </ul>
+  <p>
+    La base del tratamiento es la ejecución de la relación comercial que solicitás, tu consentimiento
+    al iniciar la conversación y nuestro interés legítimo en atender y mejorar el servicio.
+  </p>
+
+  <h3>4. Con quién los compartimos</h3>
+  <p>No vendemos, alquilamos ni cedemos tus datos personales. Los compartimos únicamente con:</p>
+  <ul>
+    <li>
+      <strong>Meta Platforms, Inc.</strong>, que actúa como <em>encargado del tratamiento</em> respecto
+      de los mensajes transmitidos a través de su infraestructura (WhatsApp Business Platform),
+      conforme a sus propios términos de servicio. El uso que hacés de WhatsApp también se rige por
+      las políticas de WhatsApp/Meta, ajenas a Urbby.
+    </li>
+    <li><strong>Banco Agrícola</strong>, como procesador de pagos de Urbby Pay, para autorizar y liquidar las transacciones.</li>
+    <li><strong>Xpress</strong>, como operador logístico, exclusivamente los datos necesarios para entregarte tu pedido.</li>
+    <li><strong>Comercios afiliados</strong>, los datos indispensables para preparar y despachar el pedido que les comprás y para atender su postventa.</li>
+    <li><strong>Proveedores tecnológicos</strong> que alojan y operan Urbby Bot y nuestros sistemas internos, bajo obligaciones de confidencialidad y solo para prestarnos el servicio.</li>
+    <li><strong>Autoridades competentes</strong>, cuando exista una obligación legal o un requerimiento válido.</li>
+  </ul>
+  <p>
+    Algunos de estos proveedores están ubicados fuera de El Salvador, por lo que tus datos pueden ser
+    tratados en otros países con las garantías contractuales correspondientes.
+  </p>
+
+  <h3>5. Cuánto tiempo los conservamos</h3>
+  <p>
+    Conservamos las conversaciones y los datos asociados mientras dure la relación comercial y por el
+    plazo adicional que exija la normativa mercantil y tributaria salvadoreña. Cumplido ese plazo, los
+    eliminamos o los anonimizamos.
+  </p>
+
+  <h3>6. Tus derechos (ARCO-POL) y cómo eliminar tus datos</h3>
+  <p>
+    Podés ejercer en cualquier momento tus derechos de <strong>acceso</strong>,
+    <strong>rectificación</strong>, <strong>cancelación</strong>, <strong>oposición</strong>,
+    <strong>portabilidad</strong>, <strong>oposición a decisiones automatizadas</strong> y
+    <strong>limitación</strong> del tratamiento, así como retirar tu consentimiento o pedir que
+    dejemos de contactarte.
+  </p>
+
+  <div class="my-5 rounded-tile border border-brand/35 bg-brand/10 p-6">
+    <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">
+      Solicitud de eliminación de datos
+    </p>
+    <p class="text-white">
+      Escribí a <a href={`mailto:${empresa.correo}`}>{empresa.correo}</a>, dirigido al delegado de
+      protección de datos personales de Urbby, con el asunto <strong>“Solicitud de datos
+      personales”</strong>, indicando tu nombre y el número de WhatsApp desde el que nos escribiste.
+      Respondemos dentro de los <strong>15 días hábiles</strong> siguientes.
+    </p>
+    <p class="mb-0 text-white">
+      También podés enviar tu solicitud por escrito a {direccionCompleta}, o llamarnos al
+      {' '}{empresa.telefono}. El procedimiento completo está en
+      {' '}<a href="/eliminar-datos">Eliminación de datos</a>.
+    </p>
+  </div>
+
+  <p>
+    Bloquear o eliminar la conversación desde tu propia aplicación de WhatsApp solo afecta tu
+    dispositivo; para borrar los datos de nuestros sistemas, enviá la solicitud por los medios
+    indicados arriba.
+  </p>
+
+  <h3>7. Menores de edad</h3>
+  <p>
+    Nuestros servicios están dirigidos a personas mayores de 18 años. No recolectamos de forma
+    intencional datos de menores de edad; si detectamos que lo hicimos, los eliminamos.
+  </p>
+
+  <h3>8. Seguridad</h3>
+  <p>
+    Aplicamos medidas técnicas y organizativas razonables —control de accesos, cifrado en tránsito,
+    tokenización de los datos de pago y registro de actividad— para proteger tu información frente a
+    acceso, alteración o divulgación no autorizados.
+  </p>
+
+  <h3>9. Cambios a esta política</h3>
+  <p>
+    Podemos actualizar esta política. Publicaremos la versión vigente en esta misma página, indicando
+    la fecha de última actualización, y comunicaremos con al menos <strong>10 días corridos</strong>
+    {' '}de anticipación los cambios que afecten tus derechos u obligaciones.
+  </p>
+
+  <h3>10. Contacto</h3>
+  <p>
+    {empresa.razonSocial} · {direccionCompleta} ·
+    {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a> · {empresa.telefono}
+  </p>
+</Legal>

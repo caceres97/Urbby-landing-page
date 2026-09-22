@@ -1,0 +1,264 @@
+---
+import Base from '../layouts/Base.astro';
+import ChatDemo from '../components/ChatDemo.astro';
+import { empresa } from '../data/empresa';
+
+const capacidades = [
+  {
+    titulo: 'Bandeja unificada de WhatsApp',
+    texto:
+      'Todas las conversaciones del número oficial de WhatsApp Business llegan a un solo lugar. Nada se pierde entre teléfonos personales ni entre turnos del equipo.',
+    icono: 'inbox',
+  },
+  {
+    titulo: 'Agentes de venta por IA',
+    texto:
+      'Los agentes de inteligencia artificial responden solos: informan precios, disponibilidad y tiempos de entrega, arman el pedido y lo llevan hasta la confirmación.',
+    icono: 'bot',
+  },
+  {
+    titulo: 'Ficha e historial del cliente',
+    texto:
+      'Cada conversación es un registro: quién escribe, qué consultó antes, qué compró, a qué dirección se le entregó y en qué estado va su pedido.',
+    icono: 'file',
+  },
+  {
+    titulo: 'Escalamiento a una persona',
+    texto:
+      'Cuando el caso lo pide, o cuando el cliente lo pide, la conversación pasa a un agente humano con todo el contexto ya cargado.',
+    icono: 'user',
+  },
+];
+
+const pasos = [
+  {
+    titulo: 'Llega el mensaje',
+    texto:
+      'El cliente escribe al número oficial de WhatsApp, verificado ante Meta. Es el único canal de mensajería.',
+  },
+  {
+    titulo: 'Urbby Bot entiende',
+    texto:
+      'Interpreta la consulta y la cruza con el catálogo de los comercios afiliados: disponibilidad, precios y zonas de entrega.',
+  },
+  {
+    titulo: 'Arma y confirma el pedido',
+    texto:
+      'Presenta un resumen con productos, total, costo de envío y dirección. Queda confirmado cuando el cliente lo acepta o completa el pago.',
+  },
+  {
+    titulo: 'Escala y da seguimiento',
+    texto:
+      'Si hace falta, pasa a un agente humano; después sigue el envío y atiende reclamos, cambios y devoluciones por el mismo chat.',
+  },
+];
+
+const garantias = [
+  {
+    titulo: 'Sobre WhatsApp Business Platform',
+    texto:
+      'Urbby Bot se opera exclusivamente sobre WhatsApp Business Platform. Meta actúa como encargado del tratamiento de los mensajes transmitidos por su infraestructura.',
+  },
+  {
+    titulo: 'Pagos fuera del chat',
+    texto:
+      'El flujo de pago proviene siempre de Urbby Pay. Urbby Bot nunca pide dentro del chat el número completo de tarjeta, el CVV ni la clave de acceso; solo recibimos un token por transacción.',
+  },
+  {
+    titulo: 'Siempre identificado',
+    texto:
+      'Urbby Bot se presenta como asistente automatizado y ofrece en todo momento la opción de ser atendido por un agente humano.',
+  },
+];
+
+const tarjeta = 'rounded-card border border-white/15 bg-white/6 p-7';
+const eyebrow = 'mb-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] text-brand';
+const h2 = 'text-[clamp(28px,4.2vw,42px)] font-extrabold italic leading-[1.08] tracking-tight';
+const lede = 'mt-4 max-w-[62ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft';
+const shell = 'mx-auto w-full max-w-[1160px] px-[22px] max-sm:px-[18px]';
+const iconoCaja = 'mb-4.5 grid h-[46px] w-[46px] place-items-center rounded-2xl border border-brand/35 bg-brand/15';
+const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]';
+---
+
+<Base
+  title="Urbby Bot — CRM de atención y ventas por WhatsApp"
+  description="Urbby Bot es el CRM con agentes de venta por IA que atiende a los clientes de Urbby por WhatsApp: centraliza las conversaciones, arma pedidos y escala a un agente humano cuando hace falta."
+>
+  {/* ===================== HERO ===================== */}
+  <section class="py-[clamp(56px,9vw,104px)] max-sm:py-11">
+    <div class={`${shell} grid grid-cols-[1.08fr_0.92fr] items-center gap-[clamp(32px,5vw,64px)] max-lg:grid-cols-1`}>
+      <div>
+        <p data-reveal class={eyebrow}>CRM conversacional · WhatsApp Business</p>
+        <h1 data-reveal class="text-[clamp(38px,6.4vw,66px)] font-extrabold italic leading-[1.05] tracking-tight">
+          Atender y vender por WhatsApp, sin perder un mensaje.
+        </h1>
+        <p data-reveal class="mt-[22px] max-w-[62ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft">
+          <strong class="text-white">Urbby Bot</strong> es un CRM con agentes de venta por
+          inteligencia artificial: centraliza en un solo lugar las conversaciones de WhatsApp,
+          responde automáticamente, arma el pedido y lo pasa a una persona cuando hace falta.
+        </p>
+        <p data-reveal class="mt-4 max-w-[62ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft">
+          Es el complemento de atención de <strong class="text-white">Urbby</strong>, el marketplace
+          que conecta a compradores con comercios afiliados en El Salvador, con pagos por Urbby Pay y
+          entregas por Xpress.
+        </p>
+        <div data-reveal class="mt-8 flex flex-wrap gap-3.5 max-sm:flex-col">
+          <a
+            href="#contacto"
+            class="inline-flex min-h-[52px] items-center justify-center rounded-full bg-brand px-7 text-base font-bold text-navy-900 no-underline transition-colors hover:bg-brand-soft active:translate-y-px"
+          >
+            Escribinos por WhatsApp
+          </a>
+          <a
+            href="#como-funciona"
+            class="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/35 px-7 text-base font-bold text-white no-underline transition-colors hover:border-brand hover:bg-white/5 active:translate-y-px"
+          >
+            Ver cómo funciona
+          </a>
+        </div>
+        <p data-reveal class="mt-5 text-sm text-ink-mute">
+          Urbby Bot es operado por {empresa.razonSocial}, {empresa.ciudad}, {empresa.pais}.
+        </p>
+      </div>
+
+      <ChatDemo />
+    </div>
+  </section>
+
+  {/* ===================== QUÉ ES URBBY BOT ===================== */}
+  <section id="urbby-bot" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Qué es Urbby Bot</p>
+    <h2 data-reveal class={h2}>Un CRM que vive dentro de la conversación.</h2>
+    <p data-reveal class={lede}>
+      No es un chatbot suelto: es la capa de atención donde se registra cada cliente, cada consulta y
+      cada pedido, sobre el único canal que nuestros clientes en El Salvador ya usan todos los días.
+    </p>
+
+    <div class="mt-9 grid grid-cols-2 gap-5 max-lg:grid-cols-1">
+      {
+        capacidades.map((c) => (
+          <div data-reveal="card" class={tarjeta}>
+            <div class={iconoCaja}>
+              {c.icono === 'inbox' && (
+                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+                  <path d="M3 13h5l1.5 2.5h5L16 13h5" />
+                  <path d="M5.5 5h13l2.5 8v4.5a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 17.5V13l2.5-8Z" />
+                </svg>
+              )}
+              {c.icono === 'bot' && (
+                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+                  <rect x="3.5" y="7.5" width="17" height="12" rx="3.5" />
+                  <path d="M12 3.5v4M8.5 13h.01M15.5 13h.01M9.5 16.5h5" />
+                </svg>
+              )}
+              {c.icono === 'file' && (
+                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+                  <path d="M6 3.5h7.5L19 9v11.5H6z" />
+                  <path d="M13 3.5V9h5.5M9 13h6M9 16.5h4" />
+                </svg>
+              )}
+              {c.icono === 'user' && (
+                <svg viewBox="0 0 24 24" class={iconoSvg} aria-hidden="true">
+                  <circle cx="12" cy="8.5" r="3.5" />
+                  <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
+                </svg>
+              )}
+            </div>
+            <h3 class="mb-2.5 text-xl font-bold not-italic">{c.titulo}</h3>
+            <p class="text-[15.5px] text-ink-soft">{c.texto}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ===================== CÓMO FUNCIONA ===================== */}
+  <section id="como-funciona" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Cómo funciona Urbby Bot</p>
+    <h2 data-reveal class={h2}>Del mensaje del cliente al pedido confirmado.</h2>
+
+    <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <span data-reveal="chip" class="inline-flex items-center gap-2.5 rounded-full border border-brand/35 bg-brand/15 px-5 py-2.5 text-[15px] font-semibold">
+        <svg viewBox="0 0 24 24" class="h-[19px] w-[19px] fill-none stroke-brand stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+          <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 3.6 11 8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5Z" />
+        </svg>
+        WhatsApp Business · canal exclusivo
+      </span>
+      <p data-reveal="chip" class="max-w-[58ch] text-sm text-ink-mute">
+        Atendemos únicamente desde un número oficial de WhatsApp verificado ante Meta.
+        Urbby Bot no opera ningún otro canal de mensajería.
+      </p>
+    </div>
+
+    <ol class="mt-9 grid list-none grid-cols-4 gap-4.5 p-0 max-lg:grid-cols-2 max-sm:grid-cols-1">
+      {
+        pasos.map((paso, i) => (
+          <li data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-[22px]">
+            <div class="mb-2.5 font-display text-[26px] font-extrabold italic text-brand">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 class="mb-1.5 text-[17px] font-bold not-italic">{paso.titulo}</h3>
+            <p class="text-[14.5px] text-ink-soft">{paso.texto}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="mt-5.5 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      {
+        garantias.map((g) => (
+          <div data-reveal="card" class={tarjeta}>
+            <h3 class="mb-2.5 text-xl font-bold not-italic">{g.titulo}</h3>
+            <p class="text-[15.5px] text-ink-soft">{g.texto}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* ===================== CONTACTO ===================== */}
+  <section id="contacto" class={`${shell} scroll-mt-24 py-[clamp(40px,6vw,72px)]`}>
+    <p data-reveal class={eyebrow}>Contacto</p>
+    <h2 data-reveal class={h2}>Estamos acá para ayudarte.</h2>
+    <p data-reveal class={lede}>
+      Escribinos por cualquiera de estos medios. Urbby Bot está disponible 24/7 para consultas y
+      pedidos; la atención por agentes humanos se brinda en horario hábil.
+    </p>
+
+    <div class="mt-9 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      <div data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-6">
+        <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">Correo electrónico</p>
+        <p class="break-words text-base font-semibold">
+          <a href={`mailto:${empresa.correo}`} class="border-b border-brand/55 text-white no-underline hover:text-brand">
+            {empresa.correo}
+          </a>
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Atención al cliente y ejercicio de derechos ARCO-POL.
+        </p>
+      </div>
+
+      <div data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-6">
+        <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">WhatsApp oficial</p>
+        <p class="break-words text-base font-semibold">
+          <a href={`tel:${empresa.telefonoEnlace}`} class="border-b border-brand/55 text-white no-underline hover:text-brand">
+            {empresa.telefono}
+          </a>
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Único número oficial de Urbby Bot, verificado ante Meta.
+        </p>
+      </div>
+
+      <div data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-6">
+        <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">Dirección física</p>
+        <p class="text-base font-semibold leading-relaxed">
+          {empresa.direccion},<br />{empresa.ciudad}, {empresa.pais}
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Domicilio registrado de {empresa.razonSocial}
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

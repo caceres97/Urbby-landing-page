@@ -1,0 +1,60 @@
+---
+import { empresa } from '../data/empresa';
+---
+
+<footer class="mt-[clamp(56px,8vw,96px)] border-t border-white/15 pt-12 pb-10">
+  <div class="mx-auto w-full max-w-[1160px] px-[22px] max-sm:px-[18px]">
+    <div class="grid grid-cols-[1.4fr_1fr_1fr] gap-[34px] max-lg:grid-cols-2 max-sm:grid-cols-1">
+      <div data-reveal>
+        <a href="/" class="mb-4 flex items-center gap-2.5 no-underline" aria-label="Urbby Bot, inicio">
+          <img src="/assets/urbby.png" alt="" width="34" height="34" class="block h-[34px] w-[34px] rounded-[10px]" />
+          <span class="font-display text-[21px] font-extrabold italic">
+            <span class="text-brand">Urbby</span> <span class="text-white">Bot</span>
+          </span>
+        </a>
+        <p class="mb-4 text-[14.5px] text-ink-soft">
+          CRM de atención y ventas por WhatsApp, operado por:
+        </p>
+        <p class="mb-1.5 text-[14.5px] font-bold text-white">{empresa.razonSocial}</p>
+        <p class="mb-1.5 text-[14.5px] text-ink-mute">{empresa.direccion}</p>
+        <p class="mb-1.5 text-[14.5px] text-ink-mute">{empresa.ciudad}, {empresa.pais}</p>
+        <p class="mb-1.5 text-[14.5px] text-ink-mute">NIT / NRC: {empresa.nit} · {empresa.nrc}</p>
+        <p class="mb-1.5 text-[14.5px]">
+          <a href={`mailto:${empresa.correo}`} class="text-ink-soft no-underline hover:text-white">{empresa.correo}</a>
+        </p>
+        <p class="text-[14.5px]">
+          <a href={`tel:${empresa.telefonoEnlace}`} class="text-ink-soft no-underline hover:text-white">{empresa.telefono}</a>
+        </p>
+      </div>
+
+      <div data-reveal>
+        <h4 class="mb-3.5 font-display text-xs font-bold uppercase tracking-[0.14em] text-brand">Sitio</h4>
+        <ul class="m-0 list-none p-0">
+          <li class="mb-2.5"><a href="/" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Inicio</a></li>
+          <li class="mb-2.5"><a href="/#urbby-bot" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Qué es Urbby Bot</a></li>
+          <li class="mb-2.5"><a href="/#como-funciona" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Cómo funciona Urbby Bot</a></li>
+          <li><a href="/#contacto" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div data-reveal>
+        <h4 class="mb-3.5 font-display text-xs font-bold uppercase tracking-[0.14em] text-brand">Legal</h4>
+        <ul class="m-0 list-none p-0">
+          <li class="mb-2.5"><a href="/privacidad" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Política de Privacidad</a></li>
+          <li class="mb-2.5"><a href="/terminos" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Términos y Condiciones</a></li>
+          <li><a href="/eliminar-datos" class="text-[14.5px] text-ink-soft no-underline hover:text-white">Eliminación de datos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      data-reveal
+      class="mt-9 flex flex-wrap items-center gap-x-[22px] gap-y-2.5 border-t border-white/15 pt-[22px] text-[13.5px] text-ink-mute"
+    >
+      <span>© 2026 {empresa.razonSocial} Todos los derechos reservados.</span>
+      <span class="ml-auto max-w-[56ch] text-right max-sm:ml-0 max-sm:text-left">
+        Urbby no está afiliada a Meta Platforms, Inc. WhatsApp es una marca de Meta Platforms, Inc.
+      </span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+---
+import Base from './Base.astro';
+import { empresa } from '../data/empresa';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  subheading?: string;
+  intro?: string;
+}
+
+const { title, description, heading, subheading, intro } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <article class="mx-auto w-full max-w-[1160px] px-[22px] py-[clamp(48px,7vw,84px)] max-sm:px-[18px]">
+    <p data-reveal class="mb-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] text-brand">
+      Legal
+    </p>
+
+    <h1 data-reveal class="text-[clamp(32px,5vw,52px)] font-extrabold italic leading-[1.06] tracking-tight">
+      {heading}
+      {subheading && <><br /><span class="text-[0.7em]">{subheading}</span></>}
+    </h1>
+
+    {intro && <p data-reveal class="mt-5 max-w-[84ch] text-[17px] text-white">{intro}</p>}
+
+    <div data-reveal="card" class="mt-7 rounded-card border border-white/15 bg-white/5 p-[clamp(26px,4vw,44px)]">
+      <p class="m-0 text-[13px] text-ink-mute">
+        Última actualización: {empresa.actualizado} · Responsable: {empresa.razonSocial}
+      </p>
+
+      <div class="legal-prose">
+        <slot />
+      </div>
+    </div>
+
+    <nav data-reveal class="mt-8 flex flex-wrap gap-4 text-[15px]" aria-label="Otros documentos legales">
+      <a href="/" class="text-ink-soft no-underline hover:text-white">← Volver al inicio</a>
+      <a href="/privacidad" class="text-ink-soft no-underline hover:text-white">Política de Privacidad</a>
+      <a href="/terminos" class="text-ink-soft no-underline hover:text-white">Términos y Condiciones</a>
+      <a href="/eliminar-datos" class="text-ink-soft no-underline hover:text-white">Eliminación de datos</a>
+    </nav>
+  </article>
+</Base>

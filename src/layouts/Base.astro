@@ -1,0 +1,190 @@
+---
+import '../styles/global.css';
+import { empresa, metaDomainVerification } from '../data/empresa';
+import BackgroundArt from '../components/BackgroundArt.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? empresa.sitio).href;
+---
+
+<!doctype html>
+<html lang="es-SV">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    {/*
+      VERIFICACIÓN DE DOMINIO — META BUSINESS MANAGER
+      El valor se edita en src/data/empresa.ts. Business Manager lo busca en el
+      <head> de la raíz del dominio, y este layout lo pone en todas las páginas.
+    */}
+    <meta name="facebook-domain-verification" content={metaDomainVerification} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Urbby Bot" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${empresa.sitio}/assets/urbby.png`} />
+    <meta property="og:locale" content="es_SV" />
+    <meta name="theme-color" content="#021D59" />
+
+    <link rel="icon" type="image/png" href="/assets/urbby.png" />
+    <link rel="apple-touch-icon" href="/assets/urbby.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      /* Marca que hay JS antes del primer pintado: sin esto el contenido nunca
+         se oculta, así que la página funciona igual con JS deshabilitado. */
+      (function () {
+        try {
+          if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.className += ' js-anim';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <BackgroundArt />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      /* Animaciones de scroll: aparición escalonada, parallax del fondo,
+         estado del header y barra de progreso. Sólo opacity/transform. */
+      const root = document.documentElement;
+
+      if (root.classList.contains('js-anim')) {
+        /* --- 1. Aparición escalonada --- */
+        const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+
+        /* Escalona por posición dentro de su contenedor, con tope para que un
+           grupo largo no arrastre un retraso absurdo. */
+        const counts = new Map<Element, number>();
+        for (const el of targets) {
+          const parent = el.parentElement;
+          if (!parent) continue;
+          const i = counts.get(parent) ?? 0;
+          counts.set(parent, i + 1);
+          el.style.transitionDelay = `${Math.min(i, 5) * 70}ms`;
+        }
+
+        const reveal = (el: HTMLElement) => {
+          el.classList.add('is-revealed');
+          window.setTimeout(() => {
+            el.style.transitionDelay = '';
+          }, 1200);
+        };
+
+        const revealAll = () => {
+          for (const el of targets) {
+            if (!el.classList.contains('is-revealed')) reveal(el);
+          }
+        };
+
+        if ('IntersectionObserver' in window) {
+          let observerFired = false;
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (!entry.isIntersecting) continue;
+                observerFired = true;
+                observer.unobserve(entry.target);
+                reveal(entry.target as HTMLElement);
+              }
+            },
+            { rootMargin: '0px 0px -10% 0px', threshold: 0.06 },
+          );
+
+          for (const el of targets) observer.observe(el);
+
+          /* Red de seguridad: si el observer no llegó a disparar ni una vez, el
+             contenido se muestra completo. Nunca una página en blanco — el texto
+             legal tiene que ser legible aunque la animación falle. */
+          window.setTimeout(() => {
+            if (observerFired) return;
+            observer.disconnect();
+            revealAll();
+          }, 2500);
+        } else {
+          revealAll();
+        }
+
+        /* --- 2. Parallax, header y progreso --- */
+        const header = document.querySelector<HTMLElement>('[data-header]');
+        const progress = document.querySelector<HTMLElement>('[data-progress]');
+
+        /* El recorrido va atado al progreso de la página (0 a 1), no a los píxeles
+           de scroll: así el desplazamiento queda acotado y las formas siguen en
+           cuadro de arriba abajo, por larga que sea la página. */
+        const layerSpec: Record<string, { shift: number; spin: number }> = {
+          'swoosh-a': { shift: -70, spin: 0 },
+          'swoosh-b': { shift: 60, spin: 0 },
+          'ring-tr': { shift: 110, spin: 20 },
+          'ring-bl': { shift: -90, spin: -20 },
+          'plus-tl': { shift: 140, spin: 0 },
+          'plus-br': { shift: -120, spin: 0 },
+        };
+
+        const layers = Array.from(document.querySelectorAll<HTMLElement>('[data-layer]'))
+          .map((el) => ({ el, ...(layerSpec[el.dataset.layer ?? ''] ?? { shift: 0, spin: 0 }) }))
+          .filter((layer) => layer.shift !== 0 || layer.spin !== 0);
+
+        let ticking = false;
+
+        const onFrame = () => {
+          ticking = false;
+          const y = window.scrollY || 0;
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          const p = max > 0 ? Math.min(Math.max(y / max, 0), 1) : 0;
+
+          for (const layer of layers) {
+            layer.el.style.setProperty('--py', `${(p * layer.shift).toFixed(1)}px`);
+            if (layer.spin) {
+              layer.el.style.setProperty('--pr', `${(p * layer.spin).toFixed(2)}deg`);
+            }
+          }
+
+          if (header) {
+            header.classList.toggle('bg-navy-900/95', y > 8);
+            header.classList.toggle('shadow-[0_16px_34px_-26px_rgba(0,0,0,0.95)]', y > 8);
+          }
+
+          if (progress) progress.style.setProperty('--sp', p.toFixed(4));
+        };
+
+        const onScroll = () => {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(onFrame);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        onFrame();
+      }
+    </script>
+  </body>
+</html>

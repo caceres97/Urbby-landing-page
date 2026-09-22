@@ -1,0 +1,74 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { empresa, direccionCompleta } from '../data/empresa';
+---
+
+<Legal
+  title="Eliminación de datos — Urbby Bot"
+  description="Cómo solicitar la eliminación de tus datos personales tratados por Urbby Bot a través de WhatsApp. Procedimiento, plazo de respuesta y medios de contacto."
+  heading="Eliminación de datos"
+  subheading="Cómo pedir que borremos tu información"
+  intro="Esta página explica el procedimiento para solicitar la eliminación de los datos personales que Urbby Bot trata cuando nos escribís por WhatsApp. Es la dirección que indicamos a Meta como instrucciones de eliminación de datos."
+>
+  <h3>1. Qué datos podemos eliminar</h3>
+  <p>
+    A solicitud tuya eliminamos de nuestros sistemas la información asociada a tu número de
+    WhatsApp: tu nombre, el contenido de la conversación con Urbby Bot, la dirección de entrega y el
+    historial de pedidos, en la medida en que la ley salvadoreña no nos obligue a conservarlos.
+  </p>
+  <p>
+    No podemos eliminar los datos que debemos guardar por obligación mercantil o tributaria —por
+    ejemplo, los comprobantes y facturas de compras ya realizadas—. En ese caso los bloqueamos: dejan
+    de usarse para atenderte y se conservan solo para cumplir esa obligación legal, por el plazo que
+    ella exija. Tampoco podemos eliminar los datos que WhatsApp o Meta conserven en su propia
+    infraestructura; eso se gestiona desde tu aplicación de WhatsApp y con Meta directamente.
+  </p>
+
+  <h3>2. Cómo hacer la solicitud</h3>
+  <ol>
+    <li>
+      Escribí a <a href={`mailto:${empresa.correo}?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20datos`}>{empresa.correo}</a>,
+      dirigido al delegado de protección de datos personales de Urbby.
+    </li>
+    <li>Poné en el asunto: <strong>“Solicitud de eliminación de datos”</strong>.</li>
+    <li>
+      Indicá tu nombre y el <strong>número de WhatsApp</strong> desde el que nos escribiste. Lo
+      necesitamos para localizar tu información; sin ese dato no podemos identificar qué borrar.
+    </li>
+    <li>
+      Si preferís no usar el correo, podés pedirlo por escrito a {direccionCompleta}, o llamarnos al
+      {' '}{empresa.telefono}.
+    </li>
+  </ol>
+
+  <h3>3. Qué pasa después</h3>
+  <ul>
+    <li>Confirmamos la recepción de tu solicitud por el mismo medio por el que nos escribiste.</li>
+    <li>
+      Verificamos tu identidad. Podemos pedirte que nos escribas desde el número de WhatsApp
+      indicado, para asegurarnos de que la solicitud viene de vos.
+    </li>
+    <li>
+      Eliminamos o bloqueamos los datos y te confirmamos el resultado dentro de los
+      <strong>15 días hábiles</strong> siguientes a la solicitud.
+    </li>
+    <li>
+      Si no podemos eliminar algún dato, te explicamos cuál y bajo qué obligación legal debemos
+      conservarlo.
+    </li>
+  </ul>
+
+  <h3>4. Otros derechos</h3>
+  <p>
+    Además de la eliminación, podés ejercer tus derechos de acceso, rectificación, cancelación,
+    oposición, portabilidad, oposición a decisiones automatizadas y limitación del tratamiento. El
+    procedimiento y los plazos son los mismos. El detalle está en nuestra
+    {' '}<a href="/privacidad">Política de Privacidad</a>.
+  </p>
+
+  <h3>5. Responsable</h3>
+  <p>
+    {empresa.razonSocial} · {direccionCompleta} ·
+    {' '}<a href={`mailto:${empresa.correo}`}>{empresa.correo}</a> · {empresa.telefono}
+  </p>
+</Legal>

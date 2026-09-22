@@ -1,0 +1,21 @@
+{
+  "name": "urbby-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio institucional de Urbby El Salvador S.A. de C.V. para la verificación de negocio y dominio en Meta Business Manager.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}
