@@ -27,13 +27,10 @@ export const empresa = {
   ciudad: 'San Salvador',
   pais: 'El Salvador',
 
-  correo: 'CORREO@urbby.app',
-  telefono: '+503 [TELÉFONO]',
-  /** Sólo dígitos, para los enlaces tel: y wa.me */
-  telefonoEnlace: '+50300000000',
-
-  nit: '[NIT]',
-  nrc: '[NRC]',
+  correo: 'soporte@urbby.app',
+  telefono: '+503 7563 4349',
+  /** Sólo dígitos, para los enlaces tel: */
+  telefonoEnlace: '+50375634349',
 
   actualizado: '22 de septiembre de 2026',
 } as const;

@@ -26,16 +26,15 @@ Astro 5 + Tailwind 4, salida estática.
 
 ## Antes de publicar
 
-### 1. Completar los datos legales
+### 1. Datos legales — ya cargados
 
-Todo vive en **`src/data/empresa.ts`**. Los valores entre corchetes están
-pendientes y deben quedar **idénticos** a los documentos de registro de la
-sociedad en El Salvador — Meta los coteja durante la verificación:
+Todos viven en **`src/data/empresa.ts`**: razón social, domicilio, correo y
+teléfono. Están completos con los datos reales y deben mantenerse **idénticos**
+a los documentos de registro de la sociedad en El Salvador, porque Meta los
+coteja durante la verificación.
 
-- `direccion` — dirección exacta según la escritura de constitución
-- `correo` — el mismo del delegado de protección de datos
-- `telefono` y `telefonoEnlace` — el teléfono registrado del negocio
-- `nit` y `nrc`
+El correo y el teléfono tienen que poder **recibir el código de verificación**
+que Meta envía.
 
 ### 2. Pegar el código de verificación de dominio
 
