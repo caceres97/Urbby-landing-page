@@ -1,9 +1,8 @@
 # Urbby — sitio de verificación de Meta
 
-Sitio de **Urbby El Salvador S.A. de C.V.**: el marketplace Urbby y su CRM de
-atención por WhatsApp, Urbby Bot. Sirve para completar la verificación de negocio
-y de dominio en Meta Business Manager y como sitio de referencia del Tech Provider
-Program.
+Sitio institucional del marketplace **Urbby**, operado por Urbby El Salvador S.A.
+de C.V. Su objetivo es completar la **Verificación de Negocio** y la verificación
+de dominio en Meta Business Manager.
 
 Astro 5 + Tailwind 4, salida estática.
 
@@ -18,26 +17,12 @@ Astro 5 + Tailwind 4, salida estática.
 
 ## Páginas
 
-El sitio tiene dos caras bajo el mismo dominio: **Urbby**, el marketplace, en la raíz; y
-**Urbby Bot**, el CRM de atención por WhatsApp, bajo `/urbby-bot`. El header cambia de lockup y de
-navegación según la sección.
-
-| Ruta                    | Archivo                             | Contenido                                       |
-| ----------------------- | ----------------------------------- | ----------------------------------------------- |
-| `/`                     | `src/pages/index.astro`             | Landing del marketplace: cómo comprar, Urbby Pay, envíos, derechos |
-| `/terminos`             | `src/pages/terminos.astro`          | Términos y Condiciones de Uso (Compradores), 15 cláusulas |
-| `/privacidad`           | `src/pages/privacidad.astro`        | Declaración de Privacidad de todo el ecosistema |
-| `/eliminar-datos`       | `src/pages/eliminar-datos.astro`    | Instrucciones de eliminación de datos           |
-| `/urbby-bot`            | `src/pages/urbby-bot/index.astro`   | Landing de Urbby Bot                            |
-| `/urbby-bot/terminos`   | `src/pages/urbby-bot/terminos.astro`| Anexo de Términos del canal de WhatsApp         |
-
-Hay **una sola** Declaración de Privacidad y **una sola** página de eliminación de datos, que cubren
-el marketplace y el canal de WhatsApp. Son la misma empresa y el mismo responsable de tratamiento;
-partirlas en dos documentos confundiría a la persona usuaria y al revisor de Meta.
-
-`/eliminar-datos` existe para pegarse en el campo **Data Deletion Instructions URL** del App
-Dashboard de Meta. Meta acepta una URL de instrucciones en lugar de un callback técnico
-([docs](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/data-deletion-callback/)).
+| Ruta              | Archivo                          | Contenido                                            |
+| ----------------- | -------------------------------- | ---------------------------------------------------- |
+| `/`               | `src/pages/index.astro`          | Landing: cómo comprar, Urbby Pay, envíos, derechos   |
+| `/terminos`       | `src/pages/terminos.astro`       | Términos y Condiciones de Uso (Compradores)          |
+| `/privacidad`     | `src/pages/privacidad.astro`     | Declaración de Privacidad                            |
+| `/eliminar-datos` | `src/pages/eliminar-datos.astro` | Instrucciones de eliminación de datos                |
 
 ## Antes de publicar
 
@@ -49,7 +34,7 @@ sociedad en El Salvador — Meta los coteja durante la verificación:
 
 - `direccion` — dirección exacta según la escritura de constitución
 - `correo` — el mismo del delegado de protección de datos
-- `telefono` y `telefonoEnlace` — el único número oficial de WhatsApp
+- `telefono` y `telefonoEnlace` — el teléfono registrado del negocio
 - `nit` y `nrc`
 
 ### 2. Pegar el código de verificación de dominio
@@ -76,8 +61,8 @@ src/
   data/empresa.ts          ← datos legales, un solo lugar
   layouts/Base.astro       ← <head>, meta de verificación, scripts de animación
   layouts/Legal.astro      ← envoltorio de los documentos legales
-  components/              ← Header, Footer, BackgroundArt, ChatDemo
-  pages/                   ← una página por ruta (marketplace en la raíz, bot en urbby-bot/)
+  components/              ← Header, Footer, BackgroundArt
+  pages/                   ← una página por ruta
   styles/global.css        ← tokens de marca (@theme) y animaciones
 public/assets/             ← logo y formas de marca
 reference/                 ← versión anterior de una sola página, sólo consulta
@@ -95,7 +80,7 @@ Verificado contra la documentación oficial de Meta (septiembre 2026). Cada punt
       → [Por qué se rechazó mi solicitud](https://es-la.facebook.com/business/help/2342133782492969)
 - [x] **Meta tag de verificación en el HTML estático del home.** El rastreador de Facebook **no
       ejecuta JavaScript**, así que la etiqueta debe venir en el HTML servido. Astro la genera en el
-      build, no en el cliente. Está en las seis páginas; el mínimo que Meta exige es el home.
+      build, no en el cliente. Está en las cuatro páginas; el mínimo que Meta exige es el home.
       → [Verifying your domain](https://developers.facebook.com/documentation/sharing/domain-verification/verifying-your-domain)
 - [x] **Política de privacidad publicada y accesible.**
       → [WhatsApp Business Messaging Policy](https://whatsappbusiness.com/policy/)
