@@ -13,8 +13,8 @@ import { empresa } from '../data/empresa';
           Marketplace salvadoreño. Comercios afiliados, pagos con Urbby Pay y entregas con Xpress.
         </p>
         <p class="mb-1.5 text-[14.5px] font-bold text-white">{empresa.razonSocial}</p>
-        <p class="mb-1.5 text-[14.5px] text-ink-mute">{empresa.direccion}</p>
-        <p class="mb-1.5 text-[14.5px] text-ink-mute">{empresa.ciudad}, {empresa.pais}</p>
+        <p class="mb-1.5 text-[14.5px] leading-relaxed text-ink-mute">{empresa.direccion}</p>
+        <p class="mb-1.5 text-[14.5px] text-ink-mute">{empresa.pais}</p>
         <p class="mb-1.5 text-[14.5px] text-ink-mute">NIT / NRC: {empresa.nit} · {empresa.nrc}</p>
         <p class="mb-1.5 text-[14.5px]">
           <a href={`mailto:${empresa.correo}`} class="text-ink-soft no-underline hover:text-white">{empresa.correo}</a>
@@ -48,7 +48,7 @@ import { empresa } from '../data/empresa';
       data-reveal
       class="mt-9 flex flex-wrap items-center gap-x-[22px] gap-y-2.5 border-t border-white/15 pt-[22px] text-[13.5px] text-ink-mute"
     >
-      <span>© 2026 {empresa.razonSocial} Todos los derechos reservados.</span>
+      <span>© 2026 {empresa.razonSocial}. Todos los derechos reservados.</span>
       <span class="ml-auto max-w-[62ch] text-right max-sm:ml-0 max-sm:text-left">
         Urbby actúa como intermediario tecnológico entre Comercios afiliados y compradores;
         los productos son responsabilidad de cada Comercio vendedor.

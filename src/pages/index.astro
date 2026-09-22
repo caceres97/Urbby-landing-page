@@ -90,7 +90,7 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
           </a>
         </div>
         <p data-reveal class="mt-5 text-sm text-ink-mute">
-          Operado por {empresa.razonSocial}, {empresa.ciudad}, {empresa.pais}.
+          Operado por {empresa.razonSocialCorta}, {empresa.ciudad}, {empresa.pais}.
         </p>
       </div>
 
@@ -335,10 +335,10 @@ const iconoSvg = 'h-[23px] w-[23px] fill-none stroke-brand stroke-[1.9] [stroke-
       <div data-reveal="card" class="rounded-tile border border-white/15 bg-white/4 p-6">
         <p class="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">Dirección física</p>
         <p class="text-base font-semibold leading-relaxed">
-          {empresa.direccion},<br />{empresa.ciudad}, {empresa.pais}
+          {empresa.direccion},<br />{empresa.pais}
         </p>
         <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
-          Domicilio registrado de {empresa.razonSocial}
+          Domicilio registrado de {empresa.razonSocialCorta}
         </p>
       </div>
     </div>
