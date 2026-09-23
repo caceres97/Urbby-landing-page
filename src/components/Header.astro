@@ -1,17 +1,16 @@
 ---
 const { pathname } = Astro.url;
-const enHome = pathname === '/' || pathname === '';
 
 const nav = [
-  { href: '/#urbby-bot', label: 'Qué es' },
-  { href: '/#como-funciona', label: 'Cómo funciona' },
-  { href: '/#contacto', label: 'Contacto' },
-  { href: '/privacidad', label: 'Privacidad' },
+  { href: '/#como-comprar', label: 'Cómo comprar' },
+  { href: '/#que-es', label: 'Qué es Urbby' },
+  { href: '/contacto', label: 'Contacto' },
   { href: '/terminos', label: 'Términos' },
+  { href: '/privacidad', label: 'Privacidad' },
 ];
 
-const activo = (href: string) =>
-  href.startsWith('/#') ? enHome : pathname.startsWith(href);
+const esPagina = (href: string) =>
+  !href.includes('#') && pathname.replace(/\/$/, '') === href.replace(/\/$/, '');
 ---
 
 <header
@@ -19,23 +18,18 @@ const activo = (href: string) =>
   class="sticky top-0 z-50 border-b border-white/15 bg-navy-900/70 backdrop-blur-lg transition-[background-color,box-shadow] duration-250"
 >
   <div class="mx-auto flex min-h-[74px] w-full max-w-[1160px] items-center gap-5 px-[22px] max-sm:min-h-16 max-sm:px-[18px]">
-    <a href="/" class="flex items-center gap-2.5 no-underline" aria-label="Urbby Bot, inicio">
-      <img src="/assets/urbby.png" alt="" width="38" height="38" class="block h-[38px] w-[38px] rounded-xl max-sm:h-8 max-sm:w-8" />
-      <span class="font-display text-[23px] font-extrabold italic tracking-tight max-sm:text-xl">
-        <span class="text-brand">Urbby</span> <span class="text-white">Bot</span>
-      </span>
+    <a href="/" class="flex items-center no-underline" aria-label="Urbby, inicio">
+      <img src="/assets/Urbby_SFY.png" alt="Urbby" width="120" height="34" class="block h-[34px] w-auto max-sm:h-[29px]" />
     </a>
 
-    <nav class="ml-auto flex items-center gap-7 max-lg:hidden" aria-label="Navegación principal">
+    <nav class="ml-auto flex items-center gap-6 max-lg:hidden" aria-label="Navegación principal">
       {nav.map((item) => (
         <a
           href={item.href}
-          aria-current={activo(item.href) && !item.href.startsWith('/#') ? 'page' : undefined}
+          aria-current={esPagina(item.href) ? 'page' : undefined}
           class:list={[
             'border-b-2 py-1.5 text-[15px] font-semibold no-underline transition-colors hover:border-brand hover:text-white',
-            activo(item.href) && !item.href.startsWith('/#')
-              ? 'border-brand text-white'
-              : 'border-transparent text-ink-soft',
+            esPagina(item.href) ? 'border-brand text-white' : 'border-transparent text-ink-soft',
           ]}
         >
           {item.label}
@@ -44,7 +38,7 @@ const activo = (href: string) =>
     </nav>
 
     <a
-      href="/#contacto"
+      href="/contacto"
       class="ml-auto hidden rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-navy-900 no-underline max-lg:inline-flex"
     >
       Contacto

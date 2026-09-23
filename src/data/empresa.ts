@@ -9,22 +9,28 @@
  * Los valores entre corchetes siguen pendientes de completar.
  */
 export const empresa = {
-  razonSocial: 'Urbby El Salvador S.A. de C.V.',
+  /**
+   * Nombre legal completo, tal como consta en el registro. Es el que Meta
+   * coteja: se usa sin abreviar en el footer, en /contacto y en la cabecera
+   * de cada documento legal.
+   */
+  razonSocial: 'URBBY EL SALVADOR, SOCIEDAD ANÓNIMA DE CAPITAL VARIABLE',
+  /** Forma corta, solo para prosa donde el nombre completo entorpece la lectura. */
+  razonSocialCorta: 'Urbby El Salvador, S.A. de C.V.',
   marca: 'Urbby',
   dominio: 'urbby.app',
   sitio: 'https://urbby.app',
 
-  direccion: '[DIRECCIÓN EXACTA SEGÚN ESCRITURA DE CONSTITUCIÓN]',
+  /** Dirección exacta según la escritura. No abreviar ni reordenar. */
+  direccion:
+    'BLOCK #132, COLONIA ESCALÓN, Distrito de SAN SALVADOR, Municipio de SAN SALVADOR CENTRO, Departamento de SAN SALVADOR',
   ciudad: 'San Salvador',
   pais: 'El Salvador',
 
-  correo: 'CORREO@urbby.app',
-  telefono: '+503 [TELÉFONO]',
-  /** Sólo dígitos, para los enlaces tel: y wa.me */
-  telefonoEnlace: '+50300000000',
-
-  nit: '[NIT]',
-  nrc: '[NRC]',
+  correo: 'soporte@urbby.app',
+  telefono: '+503 7563 4349',
+  /** Sólo dígitos, para los enlaces tel: */
+  telefonoEnlace: '+50375634349',
 
   actualizado: '22 de septiembre de 2026',
 } as const;
@@ -33,5 +39,9 @@ export const empresa = {
  *  Configuración del negocio › Seguridad de la marca › Dominios. */
 export const metaDomainVerification = 'PEGAR_CODIGO_DE_VERIFICACION_AQUI';
 
-export const direccionCompleta =
-  `${empresa.direccion}, ${empresa.ciudad}, ${empresa.pais}`;
+/**
+ * La dirección ya nombra el distrito, el municipio y el departamento de San
+ * Salvador, así que solo se le agrega el país: repetir la ciudad sonaría
+ * redundante y se alejaría del texto de la escritura.
+ */
+export const direccionCompleta = `${empresa.direccion}, ${empresa.pais}`;

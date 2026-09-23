@@ -1,5 +1,12 @@
 ---
-/** Fondo de marca fijo: degradado radial + formas de assets/. Decorativo. */
+/**
+ * Fondo de marca fijo: degradado radial + formas de assets/. Decorativo.
+ *
+ * Todo vive en una capa a z-index -10, detrás del contenido. Encima de las
+ * formas —pero todavía detrás del contenido— va un velo que las calma: sin él,
+ * las tarjetas translúcidas dejan pasar el amarillo y las formas parecen estar
+ * por encima del texto.
+ */
 ---
 
 <div class="fixed inset-0 -z-10 overflow-hidden bg-navy-900 pointer-events-none" aria-hidden="true">
@@ -9,38 +16,41 @@
     src="/assets/swoosh-izquierda.svg"
     alt=""
     data-layer="swoosh-a"
-    class="parallax absolute -top-[6%] -left-[24%] w-[min(1180px,105vw)] opacity-90 mix-blend-lighten max-sm:w-[150vw] max-sm:-left-[46vw] max-sm:opacity-55"
+    class="parallax absolute -top-[6%] -left-[24%] w-[min(1180px,105vw)] opacity-60 mix-blend-lighten max-sm:w-[150vw] max-sm:-left-[46vw] max-sm:opacity-40"
   />
   <img
     src="/assets/swoosh-izquierda.svg"
     alt=""
     data-layer="swoosh-b"
-    class="parallax-flip absolute -bottom-[14%] -right-[26%] w-[min(1180px,105vw)] opacity-75 mix-blend-lighten max-sm:hidden"
+    class="parallax-flip absolute -bottom-[14%] -right-[26%] w-[min(1180px,105vw)] opacity-50 mix-blend-lighten max-sm:hidden"
   />
 
   <img
     src="/assets/anillo-arriba.svg"
     alt=""
     data-layer="ring-tr"
-    class="parallax absolute top-[10px] -right-[52px] w-[190px] max-sm:w-[120px] max-sm:-right-[44px]"
+    class="parallax absolute top-[10px] -right-[52px] w-[190px] opacity-45 max-sm:w-[120px] max-sm:-right-[44px]"
   />
   <img
     src="/assets/anillo-arriba.svg"
     alt=""
     data-layer="ring-bl"
-    class="parallax absolute bottom-[22%] -left-[72px] w-[210px] max-sm:w-[130px] max-sm:-left-[58px]"
+    class="parallax absolute bottom-[22%] -left-[72px] w-[210px] opacity-45 max-sm:w-[130px] max-sm:-left-[58px]"
   />
 
   <img
     src="/assets/mas-arriba.svg"
     alt=""
     data-layer="plus-tl"
-    class="parallax absolute top-[24px] left-[78px] w-[78px] opacity-85 max-sm:w-[52px] max-sm:-left-[10px] max-sm:top-[10px]"
+    class="parallax absolute top-[24px] left-[78px] w-[78px] opacity-40 max-sm:w-[52px] max-sm:-left-[10px] max-sm:top-[10px]"
   />
   <img
     src="/assets/mas-arriba.svg"
     alt=""
     data-layer="plus-br"
-    class="parallax absolute bottom-[6%] right-[9%] w-[96px] opacity-85 max-sm:w-[60px] max-sm:-right-[12px]"
+    class="parallax absolute bottom-[6%] right-[9%] w-[96px] opacity-40 max-sm:w-[60px] max-sm:-right-[12px]"
   />
+
+  {/* Velo: apaga las formas sin borrarlas, y da una base pareja al texto */}
+  <div class="absolute inset-0 bg-navy-900/55"></div>
 </div>

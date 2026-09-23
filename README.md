@@ -1,8 +1,8 @@
 # Urbby — sitio de verificación de Meta
 
-Sitio institucional de **Urbby El Salvador S.A. de C.V.** Sirve para completar la
-verificación de negocio y de dominio en Meta Business Manager y como sitio de
-referencia del Tech Provider Program.
+Sitio institucional del marketplace **Urbby**, operado por Urbby El Salvador S.A.
+de C.V. Su objetivo es completar la **Verificación de Negocio** y la verificación
+de dominio en Meta Business Manager.
 
 Astro 5 + Tailwind 4, salida estática.
 
@@ -17,29 +17,24 @@ Astro 5 + Tailwind 4, salida estática.
 
 ## Páginas
 
-| Ruta               | Archivo                          | Contenido                                            |
-| ------------------ | -------------------------------- | ---------------------------------------------------- |
-| `/`                | `src/pages/index.astro`          | Qué es Urbby Bot, cómo funciona, contacto            |
-| `/privacidad`      | `src/pages/privacidad.astro`     | Política de Privacidad                               |
-| `/terminos`        | `src/pages/terminos.astro`       | Anexo de Términos del canal de WhatsApp              |
-| `/eliminar-datos`  | `src/pages/eliminar-datos.astro` | Instrucciones de eliminación de datos                |
-
-`/eliminar-datos` existe para pegarse en el campo **Data Deletion Instructions URL** del App
-Dashboard de Meta. Meta acepta una URL de instrucciones en lugar de un callback técnico
-([docs](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/data-deletion-callback/)).
+| Ruta              | Archivo                          | Contenido                                            |
+| ----------------- | -------------------------------- | ---------------------------------------------------- |
+| `/`               | `src/pages/index.astro`          | Landing: cómo comprar, Urbby Pay, envíos, derechos   |
+| `/terminos`       | `src/pages/terminos.astro`       | Términos y Condiciones de Uso (Compradores)          |
+| `/privacidad`     | `src/pages/privacidad.astro`     | Declaración de Privacidad                            |
+| `/eliminar-datos` | `src/pages/eliminar-datos.astro` | Instrucciones de eliminación de datos                |
 
 ## Antes de publicar
 
-### 1. Completar los datos legales
+### 1. Datos legales — ya cargados
 
-Todo vive en **`src/data/empresa.ts`**. Los valores entre corchetes están
-pendientes y deben quedar **idénticos** a los documentos de registro de la
-sociedad en El Salvador — Meta los coteja durante la verificación:
+Todos viven en **`src/data/empresa.ts`**: razón social, domicilio, correo y
+teléfono. Están completos con los datos reales y deben mantenerse **idénticos**
+a los documentos de registro de la sociedad en El Salvador, porque Meta los
+coteja durante la verificación.
 
-- `direccion` — dirección exacta según la escritura de constitución
-- `correo` — el mismo del delegado de protección de datos
-- `telefono` y `telefonoEnlace` — el único número oficial de WhatsApp
-- `nit` y `nrc`
+El correo y el teléfono tienen que poder **recibir el código de verificación**
+que Meta envía.
 
 ### 2. Pegar el código de verificación de dominio
 
@@ -50,7 +45,7 @@ export const metaDomainVerification = 'el-codigo-que-da-business-manager';
 ```
 
 Business Manager lo entrega en **Configuración del negocio › Seguridad de la
-marca › Dominios**. El layout lo inyecta en el `<head>` de las tres páginas.
+marca › Dominios**. El layout lo inyecta en el `<head>` de todas las páginas.
 
 ### 3. Subir
 
@@ -65,7 +60,7 @@ src/
   data/empresa.ts          ← datos legales, un solo lugar
   layouts/Base.astro       ← <head>, meta de verificación, scripts de animación
   layouts/Legal.astro      ← envoltorio de los documentos legales
-  components/              ← Header, Footer, BackgroundArt, ChatDemo
+  components/              ← Header, Footer, BackgroundArt
   pages/                   ← una página por ruta
   styles/global.css        ← tokens de marca (@theme) y animaciones
 public/assets/             ← logo y formas de marca

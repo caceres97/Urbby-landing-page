@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import { empresa } from '../data/empresa';
+
+const shell = 'mx-auto w-full max-w-[1160px] px-[22px] max-sm:px-[18px]';
+const tarjeta = 'rounded-tile border border-white/15 bg-white/4 p-6';
+const etiqueta = 'mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand';
+---
+
+<Base
+  title="Contacto — Urbby"
+  description="Datos de contacto y de identificación de Urbby El Salvador, S.A. de C.V.: razón social, domicilio, teléfono y correo electrónico."
+>
+  <section class={`${shell} py-[clamp(48px,7vw,84px)]`}>
+    <p data-reveal class="mb-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] text-brand">
+      Contacto
+    </p>
+    <h1 data-reveal class="text-[clamp(32px,5vw,52px)] font-extrabold italic leading-[1.06] tracking-tight">
+      Quiénes somos y cómo encontrarnos.
+    </h1>
+    <p data-reveal class="mt-5 max-w-[70ch] text-[clamp(17px,2.1vw,20px)] text-ink-soft">
+      Urbby es operado por {empresa.razonSocial}, sociedad constituida en la República de El Salvador.
+      Estos son nuestros datos de identificación y los canales por los que podés escribirnos.
+    </p>
+
+    {/* Identificación de la empresa */}
+    <div data-reveal="card" class="mt-9 rounded-card border border-white/15 bg-white/6 p-[clamp(26px,4vw,40px)]">
+      <h2 class="mb-6 text-[clamp(22px,3vw,28px)] font-extrabold italic leading-tight">
+        Datos de la empresa
+      </h2>
+      <dl class="grid grid-cols-2 gap-x-10 gap-y-6 max-sm:grid-cols-1">
+        <div>
+          <dt class={etiqueta}>Razón social</dt>
+          <dd class="m-0 text-base font-semibold text-white">{empresa.razonSocial}</dd>
+        </div>
+        <div>
+          <dt class={etiqueta}>Nombre comercial</dt>
+          <dd class="m-0 text-base font-semibold text-white">{empresa.marca}</dd>
+        </div>
+        <div>
+          <dt class={etiqueta}>Domicilio</dt>
+          <dd class="m-0 text-base font-semibold leading-relaxed text-white">
+            {empresa.direccion}<br />{empresa.pais}
+          </dd>
+        </div>
+        <div>
+          <dt class={etiqueta}>Sitio web</dt>
+          <dd class="m-0 text-base font-semibold text-white">{empresa.dominio}</dd>
+        </div>
+        <div>
+          <dt class={etiqueta}>Actividad</dt>
+          <dd class="m-0 text-base font-semibold text-white">
+            Marketplace de comercio electrónico
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    {/* Canales */}
+    <div class="mt-5 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
+      <div data-reveal="card" class={tarjeta}>
+        <p class={etiqueta}>Correo electrónico</p>
+        <p class="break-words text-base font-semibold">
+          <a href={`mailto:${empresa.correo}`} class="border-b border-brand/55 text-white no-underline hover:text-brand">
+            {empresa.correo}
+          </a>
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Soporte, reclamos sobre el pago o el envío, y derechos ARCO-POL.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <p class={etiqueta}>Teléfono</p>
+        <p class="break-words text-base font-semibold">
+          <a href={`tel:${empresa.telefonoEnlace}`} class="border-b border-brand/55 text-white no-underline hover:text-brand">
+            {empresa.telefono}
+          </a>
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Atención de lunes a sábado, en horario hábil.
+        </p>
+      </div>
+
+      <div data-reveal="card" class={tarjeta}>
+        <p class={etiqueta}>Dirección física</p>
+        <p class="text-base font-semibold leading-relaxed">
+          {empresa.direccion},<br />{empresa.pais}
+        </p>
+        <p class="mt-2 text-[13.5px] font-normal text-ink-mute">
+          Domicilio registrado de la sociedad.
+        </p>
+      </div>
+    </div>
+
+    {/* A dónde dirigir cada reclamo */}
+    <div data-reveal="card" class="mt-5 rounded-card border border-brand/35 bg-brand/10 p-[clamp(24px,3.5vw,36px)]">
+      <h2 class="mb-4 text-[clamp(20px,2.6vw,24px)] font-extrabold italic leading-tight">
+        ¿A quién le escribo?
+      </h2>
+      <ul class="m-0 list-disc space-y-2.5 pl-6 text-[15.5px] text-white">
+        <li>
+          <strong>Calidad, garantía o características del producto:</strong> primero al Comercio
+          vendedor, por los canales de contacto de su perfil dentro de la plataforma.
+        </li>
+        <li>
+          <strong>Pago, reembolso o servicio de envío:</strong> directamente a Urbby, por los medios
+          de esta página.
+        </li>
+        <li>
+          <strong>Datos personales:</strong> al delegado de protección de datos personales, en
+          {' '}<a href={`mailto:${empresa.correo}`} class="underline underline-offset-2">{empresa.correo}</a>.
+          El procedimiento está en <a href="/eliminar-datos" class="underline underline-offset-2">Eliminación de datos</a>.
+        </li>
+      </ul>
+      <p class="mt-4 mb-0 text-[15px] text-ink-soft">
+        Como persona consumidora conservás además el derecho de presentar reclamos ante la
+        <strong class="text-white"> Defensoría del Consumidor</strong> de El Salvador.
+      </p>
+    </div>
+  </section>
+</Base>
