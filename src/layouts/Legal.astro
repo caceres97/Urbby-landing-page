@@ -8,9 +8,11 @@ interface Props {
   heading: string;
   subheading?: string;
   intro?: string;
+  /** Fecha propia del documento; si no se indica, se usa la general de la empresa. */
+  actualizado?: string;
 }
 
-const { title, description, heading, subheading, intro } = Astro.props;
+const { title, description, heading, subheading, intro, actualizado = empresa.actualizado } = Astro.props;
 ---
 
 <Base title={title} description={description}>
@@ -28,7 +30,7 @@ const { title, description, heading, subheading, intro } = Astro.props;
 
     <div data-reveal="card" class="mt-7 rounded-card border border-white/15 bg-white/5 p-[clamp(26px,4vw,44px)]">
       <p class="m-0 text-[13px] text-ink-mute">
-        Última actualización: {empresa.actualizado} · Responsable: {empresa.razonSocial}
+        Última actualización: {actualizado} · Responsable: {empresa.razonSocial}
       </p>
 
       <div class="legal-prose">
